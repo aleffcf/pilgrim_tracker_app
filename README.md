@@ -783,7 +783,7 @@ The project demonstrates the integration of a mobile client with a secure asynch
 
 This project is **proprietary software**.
 
-The source code is publicly available for portfolio and evaluation purposes.
+The source code is publicly available for portfolio, study and evaluation.
 
 Viewing the source code does not grant permission to copy, modify, distribute, sublicense, or use the software commercially without prior written permission from the copyright holder.
 
