@@ -1,0 +1,8 @@
+android
+app-example
+ios
+node_modules
+AGENTS.md
+.env
+.env.example
+CLAUDE.md
