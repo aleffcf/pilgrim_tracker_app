@@ -33,7 +33,7 @@
       ],
       "config": { 
         "googleMaps": { 
-          "apiKey": "AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4" 
+          "apiKey": "" 
         } 
       },
       "package": "com.anonymous.appperegrinos"
