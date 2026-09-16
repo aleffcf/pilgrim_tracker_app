@@ -4,7 +4,7 @@ import { CameraView, useCameraPermissions } from 'expo-camera';
 import { Stack, router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { apiFetch } from '../app/api';
+import { apiFetch } from '../lib/api';
 
 export default function Scanner() {
   const [permissao, solicitarPermissao] = useCameraPermissions();

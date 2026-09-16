@@ -4,8 +4,8 @@ import { Stack, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MapView, { UrlTile, Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
-import { apiFetch, getToken, clearSession } from './api';
-import { iniciarRastreamento } from '../app/locationTask';
+import { apiFetch, getToken, clearSession } from '../lib/api';
+import { iniciarRastreamento } from '../lib/locationTask';
 
 const INTERVALO_POLLING_MS = 15000; // busca os outros peregrinos a cada 15s
 

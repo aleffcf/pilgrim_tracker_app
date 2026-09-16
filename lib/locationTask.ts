@@ -1,6 +1,6 @@
 import * as TaskManager from 'expo-task-manager';
 import * as Location from 'expo-location';
-import { apiFetch } from '../app/api';
+import { apiFetch } from '../lib/api';
 
 export const LOCATION_TASK_NAME = 'romaria-location-task';
 

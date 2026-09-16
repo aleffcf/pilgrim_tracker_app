@@ -1,7 +1,7 @@
 import * as SecureStore from 'expo-secure-store';
 
 // TODO: mover para variável de ambiente (app.config.ts + EAS secrets) antes de ir pra produção
-export const API_URL = 'http://192.168.250.134:8000';
+export const API_URL = 'http://192.168.250.120:8000';
 
 const TOKEN_KEY = 'access_token';
 

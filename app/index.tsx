@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'reac
 import { Stack, router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { apiFetch } from '../app/api';
+import { apiFetch } from '../lib/api';
 
 export default function EntradaGrupo() {
   const [codigo, setCodigo] = useState('');

@@ -3,7 +3,7 @@ import { Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-nati
 import { Stack, router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { apiFetch, saveToken } from '../app/api';
+import { apiFetch, saveToken } from '../lib/api';
 
 export default function LoginPessoal() {
   const [joinCode, setJoinCode] = useState<string | null>(null);
