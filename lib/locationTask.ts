@@ -1,6 +1,6 @@
 import * as TaskManager from 'expo-task-manager';
 import * as Location from 'expo-location';
-import { apiFetch } from '../lib/api';
+import { apiFetch } from './api';
 
 export const LOCATION_TASK_NAME = 'romaria-location-task';
 
@@ -8,6 +8,8 @@ export const LOCATION_TASK_NAME = 'romaria-location-task';
 // e este arquivo precisa ser importado cedo (ex: no _layout.tsx raiz),
 // senão o SO pode acordar o app em segundo plano sem a task registrada.
 TaskManager.defineTask(LOCATION_TASK_NAME, async ({ data, error }) => {
+  console.log('[locationTask] callback disparado', { temErro: !!error, temDados: !!data });
+
   if (error) {
     console.error('Erro na task de localização:', error);
     return;
@@ -18,6 +20,8 @@ TaskManager.defineTask(LOCATION_TASK_NAME, async ({ data, error }) => {
   const ultima = locations[locations.length - 1];
   if (!ultima) return;
 
+  console.log('[locationTask] enviando posição', ultima.coords.latitude, ultima.coords.longitude);
+
   try {
     await apiFetch('/location', {
       method: 'POST',
@@ -26,10 +30,11 @@ TaskManager.defineTask(LOCATION_TASK_NAME, async ({ data, error }) => {
         longitude: ultima.coords.longitude,
       }),
     });
+    console.log('[locationTask] posição enviada com sucesso');
   } catch (erro) {
     // Falha silenciosa aqui é intencional: sem rede momentaneamente não
     // deve travar nada, a próxima atualização tenta de novo sozinha.
-    console.error('Falha ao enviar localização em segundo plano:', erro);
+    console.error('[locationTask] Falha ao enviar localização em segundo plano:', erro);
   }
 });
 
@@ -48,9 +53,9 @@ export async function iniciarRastreamento(): Promise<boolean> {
   if (jaRodando) return true;
 
   await Location.startLocationUpdatesAsync(LOCATION_TASK_NAME, {
-    accuracy: Location.Accuracy.Balanced,
-    timeInterval: 30000, // manda posição no máximo a cada 30s
-    distanceInterval: 25, // ou quando andar 25 metros, o que vier primeiro
+    accuracy: Location.Accuracy.Highest, // DEBUG: mais agressivo pra forçar updates mais rápido
+    timeInterval: 10000, // DEBUG: 10s (depois volta pra 30000 em produção)
+    distanceInterval: 5, // DEBUG: 5m (depois volta pra 25 em produção)
     showsBackgroundLocationIndicator: true, // iOS: mostra que está rastreando
     foregroundService: {
       // Android exige uma notificação visível durante rastreamento em segundo plano
@@ -67,4 +72,17 @@ export async function pararRastreamento() {
   if (jaRodando) {
     await Location.stopLocationUpdatesAsync(LOCATION_TASK_NAME);
   }
+}
+
+/** DEBUG: confirma se a task está mesmo registrada e ativa no SO. */
+export async function diagnosticarRastreamento() {
+  const tasks = await TaskManager.getRegisteredTasksAsync();
+  const estaRodando = await Location.hasStartedLocationUpdatesAsync(LOCATION_TASK_NAME);
+  console.log('[diagnostico] tasks registradas:', tasks.map((t) => t.taskName));
+  console.log('[diagnostico] location task rodando:', estaRodando);
+
+  const fgStatus = await Location.getForegroundPermissionsAsync();
+  const bgStatus = await Location.getBackgroundPermissionsAsync();
+  console.log('[diagnostico] permissão foreground:', fgStatus.status, fgStatus.granted);
+  console.log('[diagnostico] permissão background:', bgStatus.status, bgStatus.granted);
 }

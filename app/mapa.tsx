@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { StyleSheet, Alert } from 'react-native';
 import { Stack, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import MapView, { UrlTile, Marker } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { apiFetch, getToken, clearSession } from '../lib/api';
-import { iniciarRastreamento } from '../lib/locationTask';
+import { iniciarRastreamento, diagnosticarRastreamento } from '../lib/locationTask';
 
 const INTERVALO_POLLING_MS = 15000; // busca os outros peregrinos a cada 15s
 
@@ -62,16 +62,33 @@ export default function Mapa() {
           latitudeDelta: 0.05,
           longitudeDelta: 0.05,
         });
+
+        // DEBUG TEMPORÁRIO: manda a localização direto, sem depender da
+        // task em segundo plano, só pra confirmar que /location funciona.
+        try {
+          await apiFetch('/location', {
+            method: 'POST',
+            body: JSON.stringify({
+              latitude: localAtual.coords.latitude,
+              longitude: localAtual.coords.longitude,
+            }),
+          });
+          console.log('[mapa] envio manual de localização OK');
+        } catch (erroDebug) {
+          console.error('[mapa] envio manual de localização FALHOU:', erroDebug);
+        }
       }
 
       // Começa a enviar a própria posição em segundo plano
       const rastreamentoOk = await iniciarRastreamento();
+      console.log('[mapa] iniciarRastreamento retornou:', rastreamentoOk);
       if (!rastreamentoOk) {
         Alert.alert(
           'Permissão necessária',
           'Sem a permissão de localização (inclusive em segundo plano), seu grupo não vai conseguir te encontrar no mapa.'
         );
       }
+      await diagnosticarRastreamento();
 
       // Busca os outros peregrinos agora e depois periodicamente
       await buscarPessoas();
@@ -87,13 +104,11 @@ export default function Mapa() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
       <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
-        <MapView style={styles.map} initialRegion={regiaoInicial}>
-          <UrlTile
-            urlTemplate="https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"
-            maximumZ={19}
-            flipY={false}
-          />
-
+        <MapView
+          style={styles.map}
+          provider={PROVIDER_GOOGLE}
+          initialRegion={regiaoInicial}
+        >
           {localizacao && (
             <Marker
               coordinate={{

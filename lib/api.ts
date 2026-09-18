@@ -1,7 +1,9 @@
 import * as SecureStore from 'expo-secure-store';
 
-// TODO: mover para variável de ambiente (app.config.ts + EAS secrets) antes de ir pra produção
-export const API_URL = 'http://192.168.250.120:8000';
+// EXPO_PUBLIC_ é o prefixo que o Expo exige para expor variáveis de ambiente
+// dentro do código do app (runtime). Sem o prefixo, a variável não é injetada
+// no bundle. Configure no .env: EXPO_PUBLIC_API_URL=http://SEU_IP:8000
+export const API_URL = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:8000';
 
 const TOKEN_KEY = 'access_token';
 
@@ -40,5 +42,3 @@ export async function apiFetch(path: string, options: RequestInit = {}) {
 
   return response.json();
 }
-
-export default apiFetch;

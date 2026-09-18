@@ -230,3 +230,203 @@
 {"_e":"metro:bundling:progress","_t":1789571018989,"id":"6","progress":0.8773351382926033,"total":1342,"current":1257}
 {"_e":"metro:bundling:progress","_t":1789571019090,"id":"6","progress":0.999,"total":1467,"current":1467}
 {"_e":"metro:bundling:done","_t":1789571019336,"id":"6","total":1467,"ms":751.348869}
+{"_e":"root:init","_t":1789590114985,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789590114986,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789590114988,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1789590115257,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789590115470,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789590115609,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789590118045,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1789590155025,"id":"3","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789590155025,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789590155030,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789590155130,"id":"3","progress":0.18623334750566894,"total":336,"current":145}
+{"_e":"metro:bundling:progress","_t":1789590155230,"id":"3","progress":0.33668648071940255,"total":648,"current":376}
+{"_e":"metro:bundling:progress","_t":1789590155330,"id":"3","progress":0.5249010118299295,"total":951,"current":689}
+{"_e":"metro:bundling:progress","_t":1789590155430,"id":"3","progress":0.7973096267798855,"total":1102,"current":984}
+{"_e":"metro:bundling:progress","_t":1789590155530,"id":"3","progress":0.9059034949505406,"total":1369,"current":1303}
+{"_e":"metro:bundling:done","_t":1789590155618,"id":"3","total":1369,"ms":592.822194}
+{"_e":"root:init","_t":1789660877908,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789660877909,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789660877910,"mode":"development","files":[],"env":{}}
+{"_e":"devserver:start","_t":1789660878125,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789660878258,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789660878374,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789660880629,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1789660893707,"id":"3","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789660893707,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789660893712,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789660893997,"id":"3","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:progress","_t":1789660894098,"id":"3","progress":0.17361111111111113,"total":12,"current":5}
+{"_e":"metro:bundling:progress","_t":1789660894198,"id":"3","progress":0.17361111111111113,"total":24,"current":8}
+{"_e":"metro:bundling:progress","_t":1789660894299,"id":"3","progress":0.17361111111111113,"total":40,"current":16}
+{"_e":"metro:bundling:progress","_t":1789660894401,"id":"3","progress":0.20661157024793386,"total":55,"current":25}
+{"_e":"metro:bundling:progress","_t":1789660894501,"id":"3","progress":0.32653061224489793,"total":91,"current":52}
+{"_e":"metro:bundling:progress","_t":1789660894601,"id":"3","progress":0.32653061224489793,"total":197,"current":86}
+{"_e":"metro:bundling:progress","_t":1789660894701,"id":"3","progress":0.32653061224489793,"total":265,"current":112}
+{"_e":"metro:bundling:progress","_t":1789660894801,"id":"3","progress":0.32653061224489793,"total":292,"current":133}
+{"_e":"metro:bundling:progress","_t":1789660894901,"id":"3","progress":0.32653061224489793,"total":354,"current":189}
+{"_e":"metro:bundling:progress","_t":1789660895001,"id":"3","progress":0.32653061224489793,"total":431,"current":237}
+{"_e":"metro:bundling:progress","_t":1789660895101,"id":"3","progress":0.37614377531217447,"total":481,"current":295}
+{"_e":"metro:bundling:progress","_t":1789660895201,"id":"3","progress":0.3874189885579527,"total":535,"current":333}
+{"_e":"metro:bundling:progress","_t":1789660895301,"id":"3","progress":0.3874189885579527,"total":593,"current":367}
+{"_e":"metro:bundling:progress","_t":1789660895403,"id":"3","progress":0.4314885728687151,"total":647,"current":425}
+{"_e":"metro:bundling:progress","_t":1789660895503,"id":"3","progress":0.44381868676849834,"total":710,"current":473}
+{"_e":"metro:bundling:progress","_t":1789660895603,"id":"3","progress":0.5157497374431739,"total":738,"current":530}
+{"_e":"metro:bundling:progress","_t":1789660895707,"id":"3","progress":0.5625,"total":804,"current":603}
+{"_e":"metro:bundling:progress","_t":1789660895808,"id":"3","progress":0.5667791781902335,"total":878,"current":661}
+{"_e":"metro:bundling:progress","_t":1789660895907,"id":"3","progress":0.5783666407739566,"total":952,"current":724}
+{"_e":"metro:bundling:progress","_t":1789660896007,"id":"3","progress":0.602176,"total":1000,"current":776}
+{"_e":"metro:bundling:progress","_t":1789660896109,"id":"3","progress":0.6412385096281553,"total":1034,"current":828}
+{"_e":"metro:bundling:progress","_t":1789660896209,"id":"3","progress":0.7040009070294785,"total":1050,"current":881}
+{"_e":"metro:bundling:progress","_t":1789660896309,"id":"3","progress":0.7510033206170639,"total":1072,"current":929}
+{"_e":"metro:bundling:progress","_t":1789660896410,"id":"3","progress":0.7970185191564009,"total":1091,"current":974}
+{"_e":"metro:bundling:progress","_t":1789660896509,"id":"3","progress":0.8287945555136526,"total":1127,"current":1026}
+{"_e":"metro:bundling:progress","_t":1789660896611,"id":"3","progress":0.8775877513539853,"total":1155,"current":1082}
+{"_e":"metro:bundling:progress","_t":1789660896713,"id":"3","progress":0.9293862764398608,"total":1196,"current":1153}
+{"_e":"metro:bundling:progress","_t":1789660896814,"id":"3","progress":0.9316446124763704,"total":1265,"current":1221}
+{"_e":"metro:bundling:progress","_t":1789660896913,"id":"3","progress":0.9316446124763704,"total":1353,"current":1284}
+{"_e":"metro:bundling:progress","_t":1789660897013,"id":"3","progress":0.9657657471145384,"total":1390,"current":1366}
+{"_e":"metro:bundling:progress","_t":1789660897182,"id":"3","progress":0.9694250249119256,"total":1428,"current":1406}
+{"_e":"metro:bundling:progress","_t":1789660897282,"id":"3","progress":0.9917864824129113,"total":1458,"current":1452}
+{"_e":"metro:bundling:progress","_t":1789660897382,"id":"3","progress":0.999,"total":1467,"current":1467}
+{"_e":"metro:bundling:done","_t":1789660897560,"id":"3","total":1467,"ms":3853.257845}
+{"_e":"root:init","_t":1789667291959,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789667291959,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789667291960,"mode":"development","files":["../../../.env"],"env":{"GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4","PILGRIM_API_URL":"http://192.168.15.85:8000"}}
+{"_e":"devserver:start","_t":1789667292180,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789667292303,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789667292413,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789667294657,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"root:init","_t":1789672028218,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789672028219,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789672028220,"mode":"development","files":["../../../.env"],"env":{"GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4","PILGRIM_API_URL":"http://192.168.15.85:8000"}}
+{"_e":"devserver:start","_t":1789672028410,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789672028525,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789672028614,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789672030823,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1789672090382,"id":"2","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789672090382,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789672090386,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789672090607,"id":"2","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:progress","_t":1789672090708,"id":"2","progress":0.14792899408284024,"total":13,"current":5}
+{"_e":"metro:bundling:progress","_t":1789672090934,"id":"2","progress":0.21301775147928997,"total":13,"current":6}
+{"_e":"metro:bundling:progress","_t":1789672091034,"id":"2","progress":0.21301775147928997,"total":53,"current":14}
+{"_e":"metro:bundling:progress","_t":1789672091136,"id":"2","progress":0.21301775147928997,"total":229,"current":47}
+{"_e":"metro:bundling:progress","_t":1789672091236,"id":"2","progress":0.21301775147928997,"total":264,"current":66}
+{"_e":"metro:bundling:progress","_t":1789672091336,"id":"2","progress":0.21301775147928997,"total":291,"current":85}
+{"_e":"metro:bundling:progress","_t":1789672091439,"id":"2","progress":0.21301775147928997,"total":337,"current":125}
+{"_e":"metro:bundling:progress","_t":1789672091544,"id":"2","progress":0.21301775147928997,"total":387,"current":175}
+{"_e":"metro:bundling:progress","_t":1789672091643,"id":"2","progress":0.24077003202036956,"total":483,"current":237}
+{"_e":"metro:bundling:progress","_t":1789672091743,"id":"2","progress":0.28484408534275973,"total":534,"current":285}
+{"_e":"metro:bundling:progress","_t":1789672091846,"id":"2","progress":0.2937058015404711,"total":596,"current":323}
+{"_e":"metro:bundling:progress","_t":1789672091947,"id":"2","progress":0.33039866079732155,"total":635,"current":365}
+{"_e":"metro:bundling:progress","_t":1789672092047,"id":"2","progress":0.3736583046429924,"total":674,"current":412}
+{"_e":"metro:bundling:progress","_t":1789672092148,"id":"2","progress":0.41078025278897773,"total":738,"current":473}
+{"_e":"metro:bundling:progress","_t":1789672092247,"id":"2","progress":0.41078025278897773,"total":815,"current":522}
+{"_e":"metro:bundling:progress","_t":1789672092348,"id":"2","progress":0.479672225910579,"total":836,"current":579}
+{"_e":"metro:bundling:progress","_t":1789672092448,"id":"2","progress":0.5581780797806805,"total":866,"current":647}
+{"_e":"metro:bundling:progress","_t":1789672092548,"id":"2","progress":0.6291334303947447,"total":909,"current":721}
+{"_e":"metro:bundling:progress","_t":1789672092648,"id":"2","progress":0.6512773160972606,"total":969,"current":782}
+{"_e":"metro:bundling:progress","_t":1789672092748,"id":"2","progress":0.7027362449609473,"total":1008,"current":845}
+{"_e":"metro:bundling:progress","_t":1789672092848,"id":"2","progress":0.7342265893595944,"total":1048,"current":898}
+{"_e":"metro:bundling:progress","_t":1789672092948,"id":"2","progress":0.7881257886759047,"total":1087,"current":965}
+{"_e":"metro:bundling:progress","_t":1789672093048,"id":"2","progress":0.8240803597691412,"total":1117,"current":1014}
+{"_e":"metro:bundling:progress","_t":1789672093148,"id":"2","progress":0.8359631364964398,"total":1167,"current":1067}
+{"_e":"metro:bundling:progress","_t":1789672093248,"id":"2","progress":0.8864607913546049,"total":1197,"current":1127}
+{"_e":"metro:bundling:progress","_t":1789672093348,"id":"2","progress":0.9434916265383096,"total":1221,"current":1186}
+{"_e":"metro:bundling:progress","_t":1789672093448,"id":"2","progress":0.9434916265383096,"total":1282,"current":1243}
+{"_e":"metro:bundling:progress","_t":1789672093548,"id":"2","progress":0.9434916265383096,"total":1356,"current":1296}
+{"_e":"metro:bundling:progress","_t":1789672093650,"id":"2","progress":0.9672503631891382,"total":1393,"current":1370}
+{"_e":"metro:bundling:progress","_t":1789672093750,"id":"2","progress":0.9777320827544599,"total":1429,"current":1413}
+{"_e":"metro:bundling:progress","_t":1789672093851,"id":"2","progress":0.9862260597790915,"total":1447,"current":1437}
+{"_e":"metro:bundling:progress","_t":1789672093950,"id":"2","progress":0.997248969666196,"total":1453,"current":1451}
+{"_e":"metro:bundling:progress","_t":1789672094038,"id":"2","progress":0.9986240111708505,"total":1453,"current":1452}
+{"_e":"metro:bundling:progress","_t":1789672094138,"id":"2","progress":0.9986268453387273,"total":1456,"current":1455}
+{"_e":"metro:bundling:progress","_t":1789672094257,"id":"2","progress":0.999,"total":1456,"current":1456}
+{"_e":"metro:bundling:progress","_t":1789672094358,"id":"2","progress":0.999,"total":1467,"current":1467}
+{"_e":"metro:bundling:done","_t":1789672094542,"id":"2","total":1467,"ms":4160.050755}
+{"_e":"metro:bundling:started","_t":1789672190059,"id":"5","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789672190059,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789672190089,"id":"5","total":1,"ms":29.315411}
+{"_e":"metro:bundling:failed","_t":1789672266878,"id":null,"message":"The package at \"node_modules/dotenv/lib/main.js\" attempted to import the Node standard library module \"path\".\nIt failed because the native React runtime does not include the Node standard library.\nLearn more\n  1 | const fs = require('fs')\n> 2 | const path = require('path')\n    |                       ^\n  3 | const os = require('os')\n  4 | const crypto = require('crypto')\n  5 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules/\u001b[1mdotenv\u001b[22m/lib/main.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"path\"\u001b[39m\u001b[90m\u001b[39m\n\n\u001b[90m \u001b[39mlib/api.ts\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"dotenv\"\u001b[39m\n\n\u001b[90m \u001b[39mlib/locationTask.ts\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../lib/api\"\u001b[39m\n\n\u001b[90m \u001b[39mapp/_layout.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../lib/locationTask\"\u001b[39m\n\n\u001b[90m \u001b[39mapp\u001b[2m (require.context)\u001b[22m\n","filename":null,"targetModuleName":"path","originModulePath":"node_modules/dotenv/lib/main.js"}
+{"_e":"metro:bundling:failed","_t":1789672373311,"id":null,"message":"The package at \"node_modules/dotenv/lib/main.js\" attempted to import the Node standard library module \"path\".\nIt failed because the native React runtime does not include the Node standard library.\nLearn more\n  1 | const fs = require('fs')\n> 2 | const path = require('path')\n    |                       ^\n  3 | const os = require('os')\n  4 | const crypto = require('crypto')\n  5 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules/\u001b[1mdotenv\u001b[22m/lib/main.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"path\"\u001b[39m\u001b[90m\u001b[39m\n\n\u001b[90m \u001b[39mlib/api.ts\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"dotenv\"\u001b[39m\n\n\u001b[90m \u001b[39mlib/locationTask.ts\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../lib/api\"\u001b[39m\n\n\u001b[90m \u001b[39mapp/_layout.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../lib/locationTask\"\u001b[39m\n\n\u001b[90m \u001b[39mapp\u001b[2m (require.context)\u001b[22m\n","filename":null,"targetModuleName":"path","originModulePath":"node_modules/dotenv/lib/main.js"}
+{"_e":"root:init","_t":1789672381027,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789672381028,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789672381029,"mode":"development","files":["../../../.env"],"env":{"GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4","PILGRIM_API_URL":"http://192.168.15.85:8000"}}
+{"_e":"devserver:start","_t":1789672381223,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789672381336,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789672381433,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789672383673,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1789672392194,"id":"1","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789672392195,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789672392198,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789672392298,"id":"1","progress":0.10115123119079016,"total":327,"current":104}
+{"_e":"metro:bundling:progress","_t":1789672392398,"id":"1","progress":0.3376071972991424,"total":654,"current":380}
+{"_e":"metro:bundling:progress","_t":1789672392498,"id":"1","progress":0.5606246887528169,"total":999,"current":748}
+{"_e":"metro:bundling:progress","_t":1789672392598,"id":"1","progress":0.900188300019528,"total":1191,"current":1130}
+{"_e":"metro:bundling:failed","_t":1789672392680,"id":"1","message":"The package at \"node_modules/dotenv/lib/main.js\" attempted to import the Node standard library module \"path\".\nIt failed because the native React runtime does not include the Node standard library.\nLearn more\n  1 | const fs = require('fs')\n> 2 | const path = require('path')\n    |                       ^\n  3 | const os = require('os')\n  4 | const crypto = require('crypto')\n  5 |","importStack":"\u001b[1mImport stack:\u001b[22m\n\u001b[90m\u001b[39m\n\u001b[90m\u001b[90m \u001b[39m\u001b[90mnode_modules/\u001b[1mdotenv\u001b[22m/lib/main.js\u001b[39m\n\u001b[90m\u001b[90m |\u001b[39m\u001b[90m \u001b[36mimport\u001b[39m\u001b[90m \u001b[32m\"path\"\u001b[39m\u001b[90m\u001b[39m\n\n\u001b[90m \u001b[39mlib/api.ts\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"dotenv\"\u001b[39m\n\n\u001b[90m \u001b[39mlib/locationTask.ts\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../lib/api\"\u001b[39m\n\n\u001b[90m \u001b[39mapp/_layout.tsx\n\u001b[90m |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"../lib/locationTask\"\u001b[39m\n\n\u001b[90m \u001b[39mapp\u001b[2m (require.context)\u001b[22m\n","filename":null,"targetModuleName":"path","originModulePath":"node_modules/dotenv/lib/main.js"}
+{"_e":"root:init","_t":1789672849465,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789672849465,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789672849467,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_PILGRIM_API_URL":"http://192.168.15.85:8000","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1789672849659,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789672849772,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789672849861,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789672852133,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1789672860285,"id":"1","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789672860285,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789672860291,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789672860391,"id":"1","progress":0.07549326827874124,"total":313,"current":86}
+{"_e":"metro:bundling:progress","_t":1789672860490,"id":"1","progress":0.3145087655222791,"total":740,"current":415}
+{"_e":"metro:bundling:progress","_t":1789672860590,"id":"1","progress":0.6955299377441406,"total":1024,"current":854}
+{"_e":"metro:bundling:progress","_t":1789672860690,"id":"1","progress":0.8998608202167684,"total":1187,"current":1126}
+{"_e":"metro:bundling:progress","_t":1789672860791,"id":"1","progress":0.9986352782210627,"total":1465,"current":1464}
+{"_e":"metro:bundling:progress","_t":1789672860882,"id":"1","progress":0.999,"total":1465,"current":1465}
+{"_e":"metro:bundling:done","_t":1789672860957,"id":"1","total":1465,"ms":672.33701}
+{"_e":"metro:client_log","_t":1789672898924,"level":"warn","data":["Background location is limited in Expo Go:\nOn Android, it is not available at all.\nOn iOS, it works when running in the Simulator.\nYou can use this API, and all others, in a development build. Learn more: https://expo.fyi/dev-client."]}
+{"_e":"metro:client_log","_t":1789672899657,"level":"error","data":["Falha ao enviar localização em segundo plano:","[Error: Erro na API (status 500)]","\n\n\u001b[1mCode: api.ts\u001b[22m\n\u001b[0m \u001b[90m 36 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresponse\u001b[33m.\u001b[39mok) {\n \u001b[90m 37 |\u001b[39m     \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m ({}))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m     \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(body\u001b[33m.\u001b[39mdetail \u001b[33m||\u001b[39m \u001b[32m`Erro na API (status ${response.status})`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 39 |\u001b[39m   }\n \u001b[90m 40 |\u001b[39m\n \u001b[90m 41 |\u001b[39m   \u001b[36mreturn\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  apiFetch (\u001b]8;;lib/api.ts:38:20\u0007lib/api.ts:38:20\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1789673919103,"level":"error","data":["[mapa] envio manual de localização FALHOU:","[Error: Erro na API (status 500)]","\n\n\u001b[1mCode: api.ts\u001b[22m\n\u001b[0m \u001b[90m 36 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresponse\u001b[33m.\u001b[39mok) {\n \u001b[90m 37 |\u001b[39m     \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m ({}))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m     \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(body\u001b[33m.\u001b[39mdetail \u001b[33m||\u001b[39m \u001b[32m`Erro na API (status ${response.status})`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 39 |\u001b[39m   }\n \u001b[90m 40 |\u001b[39m\n \u001b[90m 41 |\u001b[39m   \u001b[36mreturn\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  apiFetch (\u001b]8;;lib/api.ts:38:20\u0007lib/api.ts:38:20\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1789673919278,"level":"log","data":["[mapa] iniciarRastreamento retornou:","true"]}
+{"_e":"metro:client_log","_t":1789673919304,"level":"error","data":["[Error: Uncaught (in promise, id: 0) TypeError: undefined is not a function]","\n\n\u001b[1mCode: mapa.tsx\u001b[22m\n\u001b[0m \u001b[90m 89 |\u001b[39m         )\u001b[33m;\u001b[39m\n \u001b[90m 90 |\u001b[39m       }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 91 |\u001b[39m       \u001b[36mawait\u001b[39m diagnosticarRastreamento()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 92 |\u001b[39m\n \u001b[90m 93 |\u001b[39m       \u001b[90m// Busca os outros peregrinos agora e depois periodicamente\u001b[39m\n \u001b[90m 94 |\u001b[39m       \u001b[36mawait\u001b[39m buscarPessoas()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  <anonymous> (\u001b]8;;app/mapa.tsx:91:37\u0007app/mapa.tsx:91:37\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:bundling:started","_t":1789674009278,"id":"c","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789674009278,"id":"c","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789674009311,"id":"c","total":1,"ms":32.987391}
+{"_e":"metro:client_log","_t":1789674039661,"level":"error","data":["[mapa] envio manual de localização FALHOU:","[Error: Erro na API (status 500)]","\n\n\u001b[1mCode: api.ts\u001b[22m\n\u001b[0m \u001b[90m 36 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresponse\u001b[33m.\u001b[39mok) {\n \u001b[90m 37 |\u001b[39m     \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m ({}))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m     \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(body\u001b[33m.\u001b[39mdetail \u001b[33m||\u001b[39m \u001b[32m`Erro na API (status ${response.status})`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 39 |\u001b[39m   }\n \u001b[90m 40 |\u001b[39m\n \u001b[90m 41 |\u001b[39m   \u001b[36mreturn\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  apiFetch (\u001b]8;;lib/api.ts:38:20\u0007lib/api.ts:38:20\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1789674039983,"level":"warn","data":["Background location is limited in Expo Go:\nOn Android, it is not available at all.\nOn iOS, it works when running in the Simulator.\nYou can use this API, and all others, in a development build. Learn more: https://expo.fyi/dev-client."]}
+{"_e":"metro:client_log","_t":1789674040188,"level":"log","data":["[mapa] iniciarRastreamento retornou:","true"]}
+{"_e":"metro:client_log","_t":1789674040188,"level":"log","data":["[diagnostico] tasks registradas:","[\"romaria-location-task\"]"]}
+{"_e":"metro:client_log","_t":1789674040188,"level":"log","data":["[diagnostico] location task rodando:","true"]}
+{"_e":"metro:client_log","_t":1789674040188,"level":"log","data":["[diagnostico] permissão foreground:","granted","true"]}
+{"_e":"metro:client_log","_t":1789674040188,"level":"log","data":["[diagnostico] permissão background:","granted","true"]}
+{"_e":"root:init","_t":1789674063077,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789674063077,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789674063079,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_PILGRIM_API_URL":"http://192.168.15.85:8000","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1789674063269,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789674063384,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789674063481,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789674065680,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1789674070241,"id":"1","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789674070242,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789674070245,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789674070345,"id":"1","progress":0.21285149372837014,"total":427,"current":197}
+{"_e":"metro:bundling:progress","_t":1789674070445,"id":"1","progress":0.364033581973097,"total":895,"current":540}
+{"_e":"metro:bundling:progress","_t":1789674070545,"id":"1","progress":0.7752547642150541,"total":1071,"current":943}
+{"_e":"metro:bundling:progress","_t":1789674070645,"id":"1","progress":0.9128692785731856,"total":1369,"current":1308}
+{"_e":"metro:bundling:done","_t":1789674070719,"id":"1","total":1369,"ms":477.59961}
+{"_e":"metro:client_log","_t":1789674101003,"level":"error","data":["[mapa] envio manual de localização FALHOU:","[Error: Erro na API (status 500)]","\n\n\u001b[1mCode: api.ts\u001b[22m\n\u001b[0m \u001b[90m 36 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresponse\u001b[33m.\u001b[39mok) {\n \u001b[90m 37 |\u001b[39m     \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m ({}))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m     \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(body\u001b[33m.\u001b[39mdetail \u001b[33m||\u001b[39m \u001b[32m`Erro na API (status ${response.status})`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 39 |\u001b[39m   }\n \u001b[90m 40 |\u001b[39m\n \u001b[90m 41 |\u001b[39m   \u001b[36mreturn\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  apiFetch (\u001b]8;;lib/api.ts:38:20\u0007lib/api.ts:38:20\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1789674101311,"level":"warn","data":["Background location is limited in Expo Go:\nOn Android, it is not available at all.\nOn iOS, it works when running in the Simulator.\nYou can use this API, and all others, in a development build. Learn more: https://expo.fyi/dev-client."]}
+{"_e":"metro:client_log","_t":1789674101318,"level":"log","data":["[mapa] iniciarRastreamento retornou:","true"]}
+{"_e":"metro:client_log","_t":1789674101417,"level":"log","data":["[diagnostico] tasks registradas:","[\"romaria-location-task\"]"]}
+{"_e":"metro:client_log","_t":1789674101431,"level":"log","data":["[diagnostico] location task rodando:","true"]}
+{"_e":"metro:client_log","_t":1789674101445,"level":"log","data":["[diagnostico] permissão foreground:","granted","true"]}
+{"_e":"metro:client_log","_t":1789674101447,"level":"log","data":["[diagnostico] permissão background:","granted","true"]}
+{"_e":"metro:bundling:started","_t":1789674212638,"id":"5","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789674212639,"id":"5","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789674212670,"id":"5","total":1,"ms":31.023112}
+{"_e":"metro:client_log","_t":1789674279311,"level":"error","data":["[mapa] envio manual de localização FALHOU:","[Error: Erro na API (status 500)]","\n\n\u001b[1mCode: api.ts\u001b[22m\n\u001b[0m \u001b[90m 38 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresponse\u001b[33m.\u001b[39mok) {\n \u001b[90m 39 |\u001b[39m     \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m ({}))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m     \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(body\u001b[33m.\u001b[39mdetail \u001b[33m||\u001b[39m \u001b[32m`Erro na API (status ${response.status})`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m   }\n \u001b[90m 42 |\u001b[39m\n \u001b[90m 43 |\u001b[39m   \u001b[36mreturn\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  apiFetch (\u001b]8;;lib/api.ts:40:20\u0007lib/api.ts:40:20\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1789674279807,"level":"warn","data":["Background location is limited in Expo Go:\nOn Android, it is not available at all.\nOn iOS, it works when running in the Simulator.\nYou can use this API, and all others, in a development build. Learn more: https://expo.fyi/dev-client."]}
+{"_e":"metro:client_log","_t":1789674279822,"level":"log","data":["[mapa] iniciarRastreamento retornou:","true"]}
+{"_e":"metro:client_log","_t":1789674279909,"level":"log","data":["[diagnostico] tasks registradas:","[\"romaria-location-task\"]"]}
+{"_e":"metro:client_log","_t":1789674279926,"level":"log","data":["[diagnostico] location task rodando:","true"]}
+{"_e":"metro:client_log","_t":1789674279942,"level":"log","data":["[diagnostico] permissão foreground:","granted","true"]}
+{"_e":"metro:client_log","_t":1789674279947,"level":"log","data":["[diagnostico] permissão background:","granted","true"]}
