@@ -21,7 +21,6 @@ module.exports = {
     android: {
       // Permite HTTP sem TLS — necessário enquanto o backend não tem HTTPS.
       // Remover quando o backend estiver hospedado com certificado válido.
-      usesCleartextTraffic: true,
       adaptiveIcon: {
         backgroundColor: "#E6F4FE",
         foregroundImage: "./assets/images/android-icon-foreground.png",

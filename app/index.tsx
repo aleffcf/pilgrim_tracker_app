@@ -1,13 +1,35 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ActivityIndicator } from 'react-native';
 import { Stack, router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { apiFetch } from '../lib/api';
+import { apiFetch, getToken } from '../lib/api';
 
 export default function EntradaGrupo() {
   const [codigo, setCodigo] = useState('');
   const [carregando, setCarregando] = useState(false);
+  const [verificandoSessao, setVerificandoSessao] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      // Se já existe um token válido guardado, pula direto pro mapa —
+      // sem isso, o app sempre voltaria pra essa tela mesmo já logado.
+      const token = await getToken();
+      if (token) {
+        router.replace('/mapa');
+        return;
+      }
+      setVerificandoSessao(false);
+    })();
+  }, []);
+
+  if (verificandoSessao) {
+    return (
+      <SafeAreaView style={styles.containerCarregando}>
+        <ActivityIndicator size="large" />
+      </SafeAreaView>
+    );
+  }
 
   const verificarGrupo = async (codigoDigitado: string) => {
     const codigoNormalizado = codigoDigitado.trim().toUpperCase();
@@ -77,6 +99,7 @@ export default function EntradaGrupo() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', padding: 24 },
+  containerCarregando: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   titulo: { fontSize: 28, fontWeight: 'bold', marginBottom: 8 },
   subtitulo: { fontSize: 16, color: '#666', marginBottom: 24 },
   input: {

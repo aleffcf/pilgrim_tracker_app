@@ -430,3 +430,161 @@
 {"_e":"metro:client_log","_t":1789674279926,"level":"log","data":["[diagnostico] location task rodando:","true"]}
 {"_e":"metro:client_log","_t":1789674279942,"level":"log","data":["[diagnostico] permissão foreground:","granted","true"]}
 {"_e":"metro:client_log","_t":1789674279947,"level":"log","data":["[diagnostico] permissão background:","granted","true"]}
+{"_e":"root:init","_t":1789880479850,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789880479851,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789880479852,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://caminhodamae.com.br","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1789880480082,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789880480217,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789880480324,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789880482603,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1789880596437,"id":"1","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789880596438,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789880596441,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789880596715,"id":"1","progress":0.010000000000000002,"total":1,"current":1}
+{"_e":"metro:bundling:progress","_t":1789880596815,"id":"1","progress":0.16000000000000003,"total":10,"current":4}
+{"_e":"metro:bundling:progress","_t":1789880596993,"id":"1","progress":0.25,"total":10,"current":5}
+{"_e":"metro:bundling:progress","_t":1789880597094,"id":"1","progress":0.25,"total":46,"current":21}
+{"_e":"metro:bundling:progress","_t":1789880597199,"id":"1","progress":0.25,"total":94,"current":30}
+{"_e":"metro:bundling:progress","_t":1789880597299,"id":"1","progress":0.25,"total":225,"current":58}
+{"_e":"metro:bundling:progress","_t":1789880597399,"id":"1","progress":0.25,"total":294,"current":95}
+{"_e":"metro:bundling:progress","_t":1789880597500,"id":"1","progress":0.25,"total":328,"current":125}
+{"_e":"metro:bundling:progress","_t":1789880597600,"id":"1","progress":0.25,"total":362,"current":143}
+{"_e":"metro:bundling:progress","_t":1789880597700,"id":"1","progress":0.25,"total":419,"current":200}
+{"_e":"metro:bundling:progress","_t":1789880597802,"id":"1","progress":0.3187183084429421,"total":457,"current":258}
+{"_e":"metro:bundling:progress","_t":1789880597907,"id":"1","progress":0.3553094963475586,"total":510,"current":304}
+{"_e":"metro:bundling:progress","_t":1789880598008,"id":"1","progress":0.36282430971577856,"total":596,"current":359}
+{"_e":"metro:bundling:progress","_t":1789880598108,"id":"1","progress":0.3903914773628623,"total":669,"current":418}
+{"_e":"metro:bundling:progress","_t":1789880598209,"id":"1","progress":0.47253189132133,"total":691,"current":475}
+{"_e":"metro:bundling:progress","_t":1789880598309,"id":"1","progress":0.5268932466135264,"total":715,"current":519}
+{"_e":"metro:bundling:progress","_t":1789880598410,"id":"1","progress":0.5732359541873707,"total":737,"current":558}
+{"_e":"metro:bundling:progress","_t":1789880598510,"id":"1","progress":0.5732359541873707,"total":824,"current":615}
+{"_e":"metro:bundling:progress","_t":1789880598610,"id":"1","progress":0.6392319232615015,"total":833,"current":666}
+{"_e":"metro:bundling:progress","_t":1789880598711,"id":"1","progress":0.6801397923875433,"total":850,"current":701}
+{"_e":"metro:bundling:progress","_t":1789880598812,"id":"1","progress":0.7131716228978265,"total":881,"current":744}
+{"_e":"metro:bundling:progress","_t":1789880598913,"id":"1","progress":0.715701721590201,"total":948,"current":802}
+{"_e":"metro:bundling:progress","_t":1789880599014,"id":"1","progress":0.715701721590201,"total":1009,"current":843}
+{"_e":"metro:bundling:progress","_t":1789880599113,"id":"1","progress":0.715701721590201,"total":1052,"current":885}
+{"_e":"metro:bundling:progress","_t":1789880599219,"id":"1","progress":0.7606987393295267,"total":1064,"current":928}
+{"_e":"metro:bundling:progress","_t":1789880599319,"id":"1","progress":0.8460608634712989,"total":1085,"current":998}
+{"_e":"metro:bundling:progress","_t":1789880599419,"id":"1","progress":0.8694526419753086,"total":1125,"current":1049}
+{"_e":"metro:bundling:progress","_t":1789880599519,"id":"1","progress":0.9276035705774531,"total":1166,"current":1123}
+{"_e":"metro:bundling:progress","_t":1789880599619,"id":"1","progress":0.9520454331228203,"total":1236,"current":1206}
+{"_e":"metro:bundling:progress","_t":1789880599726,"id":"1","progress":0.9520454331228203,"total":1301,"current":1264}
+{"_e":"metro:bundling:progress","_t":1789880599826,"id":"1","progress":0.9540951421993129,"total":1378,"current":1346}
+{"_e":"metro:bundling:progress","_t":1789880599927,"id":"1","progress":0.9738032758306,"total":1441,"current":1422}
+{"_e":"metro:bundling:progress","_t":1789880600027,"id":"1","progress":0.9890785801592019,"total":1461,"current":1453}
+{"_e":"metro:bundling:progress","_t":1789880600144,"id":"1","progress":0.999,"total":1466,"current":1466}
+{"_e":"metro:bundling:progress","_t":1789880600244,"id":"1","progress":0.999,"total":1469,"current":1469}
+{"_e":"metro:bundling:done","_t":1789880600355,"id":"1","total":1469,"ms":3917.433946}
+{"_e":"metro:client_log","_t":1789880812252,"level":"log","data":["[mapa] envio manual de localização OK"]}
+{"_e":"metro:client_log","_t":1789880817400,"level":"log","data":["[mapa] iniciarRastreamento retornou:","true"]}
+{"_e":"metro:client_log","_t":1789880817427,"level":"log","data":["[diagnostico] tasks registradas:","[\"romaria-location-task\"]"]}
+{"_e":"metro:client_log","_t":1789880817450,"level":"log","data":["[diagnostico] location task rodando:","true"]}
+{"_e":"metro:client_log","_t":1789880817456,"level":"log","data":["[diagnostico] permissão foreground:","granted","true"]}
+{"_e":"metro:client_log","_t":1789880817465,"level":"log","data":["[diagnostico] permissão background:","granted","true"]}
+{"_e":"metro:client_log","_t":1789880853977,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880854023,"level":"log","data":["[locationTask] enviando posição","-23.4202482","-46.5527909"]}
+{"_e":"metro:client_log","_t":1789880854077,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880854133,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880854138,"level":"log","data":["[locationTask] enviando posição","-23.4202266","-46.5527379"]}
+{"_e":"metro:client_log","_t":1789880854217,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880900112,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880900163,"level":"log","data":["[locationTask] enviando posição","-23.4202588","-46.5527567"]}
+{"_e":"metro:client_log","_t":1789880900175,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880904310,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880904315,"level":"log","data":["[locationTask] enviando posição","-23.4201163","-46.5527622"]}
+{"_e":"metro:client_log","_t":1789880904316,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880912746,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880912792,"level":"log","data":["[locationTask] enviando posição","-23.4200909","-46.5528144"]}
+{"_e":"metro:client_log","_t":1789880912840,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880916291,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880916417,"level":"log","data":["[locationTask] enviando posição","-23.4200514","-46.5528933"]}
+{"_e":"metro:client_log","_t":1789880916417,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880927142,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880927149,"level":"log","data":["[locationTask] enviando posição","-23.4200668","-46.5528297"]}
+{"_e":"metro:client_log","_t":1789880927239,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880936331,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880936464,"level":"log","data":["[locationTask] enviando posição","-23.4200715","-46.55281"]}
+{"_e":"metro:client_log","_t":1789880936465,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880946192,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880946343,"level":"log","data":["[locationTask] enviando posição","-23.4201037","-46.5527856"]}
+{"_e":"metro:client_log","_t":1789880946343,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880957149,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880957154,"level":"log","data":["[locationTask] enviando posição","-23.4201329","-46.5528256"]}
+{"_e":"metro:client_log","_t":1789880957339,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880967062,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880967067,"level":"log","data":["[locationTask] enviando posição","-23.420137","-46.5528296"]}
+{"_e":"metro:client_log","_t":1789880967287,"level":"log","data":["[mapa] envio manual de localização OK"]}
+{"_e":"metro:client_log","_t":1789880967293,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880967492,"level":"log","data":["[mapa] iniciarRastreamento retornou:","true"]}
+{"_e":"metro:client_log","_t":1789880967497,"level":"log","data":["[diagnostico] tasks registradas:","[\"romaria-location-task\"]"]}
+{"_e":"metro:client_log","_t":1789880967497,"level":"log","data":["[diagnostico] location task rodando:","true"]}
+{"_e":"metro:client_log","_t":1789880967497,"level":"log","data":["[diagnostico] permissão foreground:","granted","true"]}
+{"_e":"metro:client_log","_t":1789880967497,"level":"log","data":["[diagnostico] permissão background:","granted","true"]}
+{"_e":"metro:client_log","_t":1789880977442,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880977442,"level":"log","data":["[locationTask] enviando posição","-23.4201414","-46.5528224"]}
+{"_e":"metro:client_log","_t":1789880977447,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880979166,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880979173,"level":"log","data":["[locationTask] enviando posição","-23.420139","-46.5527949"]}
+{"_e":"metro:client_log","_t":1789880979173,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880995345,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880995350,"level":"log","data":["[locationTask] enviando posição","-23.4201363","-46.5527944"]}
+{"_e":"metro:client_log","_t":1789880995449,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789880998212,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789880998297,"level":"log","data":["[locationTask] enviando posição","-23.420127","-46.5527969"]}
+{"_e":"metro:client_log","_t":1789880998332,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881012144,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881012153,"level":"log","data":["[locationTask] enviando posição","-23.4201327","-46.5528039"]}
+{"_e":"metro:client_log","_t":1789881012211,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881014187,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881014192,"level":"log","data":["[locationTask] enviando posição","-23.4201289","-46.5527992"]}
+{"_e":"metro:client_log","_t":1789881014232,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881023198,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881023203,"level":"log","data":["[locationTask] enviando posição","-23.4201284","-46.5527996"]}
+{"_e":"metro:client_log","_t":1789881023225,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881045458,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881045458,"level":"log","data":["[locationTask] enviando posição","-23.4201305","-46.5528009"]}
+{"_e":"metro:client_log","_t":1789881045493,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881060169,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881060176,"level":"log","data":["[locationTask] enviando posição","-23.4201359","-46.5527956"]}
+{"_e":"metro:client_log","_t":1789881060233,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881066207,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881066211,"level":"log","data":["[locationTask] enviando posição","-23.4201455","-46.5528007"]}
+{"_e":"metro:client_log","_t":1789881066212,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881082181,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881082200,"level":"log","data":["[locationTask] enviando posição","-23.4201418","-46.552792"]}
+{"_e":"metro:client_log","_t":1789881082200,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881088223,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881088227,"level":"log","data":["[locationTask] enviando posição","-23.4201532","-46.5527903"]}
+{"_e":"metro:client_log","_t":1789881088263,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881103174,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881103179,"level":"log","data":["[locationTask] enviando posição","-23.4201378","-46.5527888"]}
+{"_e":"metro:client_log","_t":1789881103234,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881112390,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881112395,"level":"log","data":["[locationTask] enviando posição","-23.4201579","-46.5527845"]}
+{"_e":"metro:client_log","_t":1789881112395,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881127086,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881127160,"level":"log","data":["[locationTask] enviando posição","-23.4201585","-46.5527815"]}
+{"_e":"metro:client_log","_t":1789881127211,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881134201,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881134207,"level":"log","data":["[locationTask] enviando posição","-23.4201572","-46.5527702"]}
+{"_e":"metro:client_log","_t":1789881134230,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881149116,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881149121,"level":"log","data":["[locationTask] enviando posição","-23.4201549","-46.5527744"]}
+{"_e":"metro:client_log","_t":1789881149155,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881190932,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881190941,"level":"log","data":["[locationTask] enviando posição","-23.4202545","-46.5527584"]}
+{"_e":"metro:client_log","_t":1789881190941,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881456868,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881456873,"level":"log","data":["[locationTask] enviando posição","-23.4202423","-46.5527633"]}
+{"_e":"metro:client_log","_t":1789881457006,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"metro:client_log","_t":1789881702836,"level":"log","data":["[locationTask] callback disparado","{\"temDados\": true, \"temErro\": false}"]}
+{"_e":"metro:client_log","_t":1789881702847,"level":"log","data":["[locationTask] enviando posição","-23.4202531","-46.5527578"]}
+{"_e":"metro:client_log","_t":1789881703040,"level":"log","data":["[locationTask] posição enviada com sucesso"]}
+{"_e":"root:init","_t":1789881718497,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789881718497,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789881718498,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://caminhodamae.com.br","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1789881718686,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789881718798,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789881718885,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789881721129,"atlas":false,"workers":10,"host":"::","port":8081}
