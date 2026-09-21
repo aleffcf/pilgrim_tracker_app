@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { Stack, router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -71,6 +71,14 @@ export default function LoginPessoal() {
           <Text style={styles.textoBotao}>{carregando ? 'Entrando...' : 'Entrar'}</Text>
         </TouchableOpacity>
 
+        <TouchableOpacity
+          style={styles.botaoSecundario}
+          onPress={() => router.push({ pathname: '/scanner', params: { modo: 'pessoal' } })}
+          disabled={carregando}
+        >
+          <Text style={styles.textoBotaoSecundario}>Escanear QR code do crachá</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity onPress={() => router.replace('/')} disabled={carregando}>
           <Text style={styles.trocarGrupo}>Trocar de grupo</Text>
         </TouchableOpacity>
@@ -100,6 +108,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 16,
   },
+  botaoSecundario: {
+    borderWidth: 1,
+    borderColor: '#007AFF',
+    borderRadius: 8,
+    padding: 14,
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  textoBotaoSecundario: { color: '#007AFF', fontSize: 16, fontWeight: '600' },
   textoBotao: { color: '#fff', fontSize: 16, fontWeight: '600' },
   trocarGrupo: { color: '#007AFF', fontSize: 14, textAlign: 'center' },
 });

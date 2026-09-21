@@ -2,7 +2,7 @@ require('dotenv').config();
 
 module.exports = {
   expo: {
-    name: "app-peregrinos",
+    name: "Caminho da Mãe",
     slug: "peregrinos",
     version: "1.0.0",
     orientation: "portrait",
@@ -19,8 +19,6 @@ module.exports = {
       bundleIdentifier: "com.anonymous.appperegrinos",
     },
     android: {
-      // Permite HTTP sem TLS — necessário enquanto o backend não tem HTTPS.
-      // Remover quando o backend estiver hospedado com certificado válido.
       adaptiveIcon: {
         backgroundColor: "#E6F4FE",
         foregroundImage: "./assets/images/android-icon-foreground.png",
@@ -64,6 +62,12 @@ module.exports = {
         },
       ],
       "expo-secure-store",
+      [
+        "expo-camera",
+        {
+          cameraPermission: "Permita o acesso à câmera para escanear o QR code do grupo ou do seu crachá.",
+        },
+      ],
       [
         "expo-location",
         {

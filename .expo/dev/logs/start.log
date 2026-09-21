@@ -588,3 +588,170 @@
 {"_e":"metro:config","_t":1789881718798,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
 {"_e":"expo:dev-tools-plugin:load","_t":1789881718885,"plugins":[]}
 {"_e":"metro:instantiate","_t":1789881721129,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"root:init","_t":1789882032020,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789882032020,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789882032022,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://caminhodamae.com.br","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1789882032214,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789882032328,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789882032414,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789882034612,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1789882224767,"id":"1","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789882224767,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789882224773,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789882224872,"id":"1","progress":0.07628117913832201,"total":315,"current":87}
+{"_e":"metro:bundling:progress","_t":1789882224972,"id":"1","progress":0.3226777773887469,"total":676,"current":384}
+{"_e":"metro:bundling:progress","_t":1789882225072,"id":"1","progress":0.5794163510804188,"total":1005,"current":765}
+{"_e":"metro:bundling:progress","_t":1789882225172,"id":"1","progress":0.8814314785510426,"total":1161,"current":1090}
+{"_e":"metro:bundling:progress","_t":1789882225279,"id":"1","progress":0.999,"total":1469,"current":1469}
+{"_e":"metro:bundling:done","_t":1789882225316,"id":"1","total":1469,"ms":549.553482}
+{"_e":"metro:client_log","_t":1789882249122,"level":"warn","data":["No task registered for key expo-task-manager"]}
+{"_e":"metro:bundling:started","_t":1789882250799,"id":"2","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789882250799,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789882250834,"id":"2","total":1,"ms":34.784237}
+{"_e":"metro:server_log","_t":1789882320673,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","com.anonymous.appperegrinos","MI 8 Lite - 10 - API 29","60"]}
+{"_e":"metro:bundling:started","_t":1789933988890,"id":"3","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789933988890,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789933988917,"id":"3","total":1,"ms":27.713148}
+{"_e":"metro:client_log","_t":1789933998314,"level":"warn","data":["No task registered for key expo-task-manager"]}
+{"_e":"root:init","_t":1789940583999,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789940584000,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789940584001,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://caminhodamae.com.br","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1789940584187,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789940584300,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789940584397,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789940586650,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1789940602850,"id":"1","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789940602850,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789940602853,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789940602960,"id":"1","progress":0.08244289775512204,"total":303,"current":87}
+{"_e":"metro:bundling:progress","_t":1789940603060,"id":"1","progress":0.33872737881829545,"total":689,"current":401}
+{"_e":"metro:bundling:progress","_t":1789940603160,"id":"1","progress":0.7009608420099592,"total":940,"current":787}
+{"_e":"metro:bundling:progress","_t":1789940603260,"id":"1","progress":0.9030154442805803,"total":1106,"current":1051}
+{"_e":"metro:bundling:progress","_t":1789940603360,"id":"1","progress":0.9632540430320654,"total":1402,"current":1376}
+{"_e":"metro:bundling:progress","_t":1789940603460,"id":"1","progress":0.9972164244535657,"total":1436,"current":1434}
+{"_e":"metro:bundling:progress","_t":1789940603613,"id":"1","progress":0.9986077272833079,"total":1436,"current":1435}
+{"_e":"metro:bundling:done","_t":1789940603713,"id":"1","total":1436,"ms":863.470329}
+{"_e":"metro:client_log","_t":1789940614985,"level":"warn","data":["No task registered for key expo-task-manager"]}
+{"_e":"metro:client_log","_t":1789940616815,"level":"error","data":["Falha ao enviar localização em segundo plano:","[Error: Erro na API (status 500)]","\n\n\u001b[1mCode: api.ts\u001b[22m\n\u001b[0m \u001b[90m 38 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresponse\u001b[33m.\u001b[39mok) {\n \u001b[90m 39 |\u001b[39m     \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m ({}))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m     \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(body\u001b[33m.\u001b[39mdetail \u001b[33m||\u001b[39m \u001b[32m`Erro na API (status ${response.status})`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m   }\n \u001b[90m 42 |\u001b[39m\n \u001b[90m 43 |\u001b[39m   \u001b[36mreturn\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  apiFetch (\u001b]8;;lib/api.ts:40:20\u0007lib/api.ts:40:20\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1789940617075,"level":"error","data":["Falha ao enviar localização em segundo plano:","[Error: Erro na API (status 500)]","\n\n\u001b[1mCode: api.ts\u001b[22m\n\u001b[0m \u001b[90m 38 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresponse\u001b[33m.\u001b[39mok) {\n \u001b[90m 39 |\u001b[39m     \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m ({}))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m     \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(body\u001b[33m.\u001b[39mdetail \u001b[33m||\u001b[39m \u001b[32m`Erro na API (status ${response.status})`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m   }\n \u001b[90m 42 |\u001b[39m\n \u001b[90m 43 |\u001b[39m   \u001b[36mreturn\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  apiFetch (\u001b]8;;lib/api.ts:40:20\u0007lib/api.ts:40:20\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:client_log","_t":1789940617181,"level":"error","data":["Falha ao enviar localização em segundo plano:","[Error: Erro na API (status 500)]","\n\n\u001b[1mCode: api.ts\u001b[22m\n\u001b[0m \u001b[90m 38 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[33m!\u001b[39mresponse\u001b[33m.\u001b[39mok) {\n \u001b[90m 39 |\u001b[39m     \u001b[36mconst\u001b[39m body \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m ({}))\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 40 |\u001b[39m     \u001b[36mthrow\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mError\u001b[39m(body\u001b[33m.\u001b[39mdetail \u001b[33m||\u001b[39m \u001b[32m`Erro na API (status ${response.status})`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 41 |\u001b[39m   }\n \u001b[90m 42 |\u001b[39m\n \u001b[90m 43 |\u001b[39m   \u001b[36mreturn\u001b[39m response\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  apiFetch (\u001b]8;;lib/api.ts:40:20\u0007lib/api.ts:40:20\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"metro:server_log","_t":1789940822707,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","com.anonymous.appperegrinos","MI 8 Lite - 10 - API 29","60"]}
+{"_e":"metro:bundling:started","_t":1789954551719,"id":"7","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789954551720,"id":"7","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789954551751,"id":"7","total":1,"ms":31.630129}
+{"_e":"metro:client_log","_t":1789955509520,"level":"error","data":["[TypeError: Cannot read property 'toLowerCase' of undefined]","\n\n\u001b[1mCode: mapa.tsx\u001b[22m\n\u001b[0m \u001b[90m 155 |\u001b[39m\n \u001b[90m 156 |\u001b[39m   \u001b[36mconst\u001b[39m resultadosBusca \u001b[33m=\u001b[39m pessoas\u001b[33m.\u001b[39mfilter((p) \u001b[33m=>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 157 |\u001b[39m     p\u001b[33m.\u001b[39musername\u001b[33m.\u001b[39mtoLowerCase()\u001b[33m.\u001b[39mincludes(termoBusca\u001b[33m.\u001b[39mtoLowerCase())\n \u001b[90m     |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 158 |\u001b[39m   )\u001b[33m;\u001b[39m\n \u001b[90m 159 |\u001b[39m\n \u001b[90m 160 |\u001b[39m   \u001b[36mconst\u001b[39m confirmarSos \u001b[33m=\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  pessoas.filter$argument_0 (\u001b]8;;app/mapa.tsx:157:27\u0007app/mapa.tsx:157:27\u001b]8;;\u0007)\u001b[39m\n\u001b[90m  Mapa (\u001b]8;;app/mapa.tsx:156:41\u0007app/mapa.tsx:156:41\u001b]8;;\u0007)\u001b[39m","\n\n\u001b[1mCode: _layout.tsx\u001b[22m\n\u001b[0m \u001b[90m 5 |\u001b[39m\n \u001b[90m 6 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mfunction\u001b[39m \u001b[33mRootLayout\u001b[39m() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 7 |\u001b[39m   \u001b[36mreturn\u001b[39m \u001b[33m<\u001b[39m\u001b[33mStack\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 8 |\u001b[39m }\n \u001b[90m 9 |\u001b[39m\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[90m  RootLayout (\u001b]8;;app/_layout.tsx:7:10\u0007app/_layout.tsx:7:10\u001b]8;;\u0007)\u001b[39m"]}
+{"_e":"root:init","_t":1789955551971,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789955551972,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789955551973,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://caminhodamae.com.br","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1789955552168,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789955552284,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789955552372,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789955554574,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1789955624848,"id":"1","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789955624849,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789955624854,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789955624954,"id":"1","progress":0.1282547488407744,"total":363,"current":130}
+{"_e":"metro:bundling:progress","_t":1789955625054,"id":"1","progress":0.3197360680846724,"total":741,"current":419}
+{"_e":"metro:bundling:progress","_t":1789955625154,"id":"1","progress":0.7057953623580314,"total":1032,"current":867}
+{"_e":"metro:bundling:progress","_t":1789955625254,"id":"1","progress":0.9334053069719044,"total":1240,"current":1198}
+{"_e":"metro:bundling:done","_t":1789955625360,"id":"1","total":1240,"ms":511.596485}
+{"_e":"metro:server_log","_t":1789957389775,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","com.anonymous.appperegrinos","MI 8 Lite - 10 - API 29","60"]}
+{"_e":"metro:server_log","_t":1789960162582,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","com.anonymous.appperegrinos","MI 8 Lite - 10 - API 29","60"]}
+{"_e":"metro:server_log","_t":1789961419792,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","com.anonymous.appperegrinos","MI 8 Lite - 10 - API 29","60"]}
+{"_e":"metro:server_log","_t":1789963578379,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","com.anonymous.appperegrinos","MI 8 Lite - 10 - API 29","60"]}
+{"_e":"metro:bundling:started","_t":1789964384522,"id":"2","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789964384522,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789964384554,"id":"2","total":1,"ms":32.512481}
+{"_e":"metro:bundling:started","_t":1789964914250,"id":"3","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789964914250,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789964914282,"id":"3","total":1,"ms":31.475734}
+{"_e":"metro:bundling:started","_t":1789965035613,"id":"4","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789965035613,"id":"4","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1789965035645,"id":"4","total":1,"ms":31.89352}
+{"_e":"metro:server_log","_t":1789965061433,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","com.anonymous.appperegrinos","MI 8 Lite - 10 - API 29","60"]}
+{"_e":"metro:server_log","_t":1789965168484,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","com.anonymous.appperegrinos","MI 8 Lite - 10 - API 29","60"]}
+{"_e":"root:init","_t":1789965255903,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789965255904,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789965255906,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://caminhodamae.com.br","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1789965256095,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789965256209,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789965256297,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789965258535,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1789965377012,"id":"1","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1789965377012,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789965377015,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1789965377115,"id":"1","progress":0.06626801293990786,"total":303,"current":78}
+{"_e":"metro:bundling:progress","_t":1789965377216,"id":"1","progress":0.33697485838069957,"total":646,"current":375}
+{"_e":"metro:bundling:progress","_t":1789965377316,"id":"1","progress":0.48554210049796287,"total":940,"current":655}
+{"_e":"metro:bundling:progress","_t":1789965377418,"id":"1","progress":0.7701292689317843,"total":1070,"current":939}
+{"_e":"metro:bundling:progress","_t":1789965377518,"id":"1","progress":0.9115371090628164,"total":1370,"current":1308}
+{"_e":"metro:bundling:done","_t":1789965377594,"id":"1","total":1370,"ms":582.160069}
+{"_e":"metro:server_log","_t":1789965579852,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","com.anonymous.appperegrinos","MI 8 Lite - 10 - API 29","60"]}
+{"_e":"metro:server_log","_t":1789966467752,"level":"error","data":["[timeout] connection terminated with Device for app='%s' on device='%s' after not responding for %s seconds.","com.anonymous.appperegrinos","MI 8 Lite - 10 - API 29","60"]}
+{"_e":"root:init","_t":1789998509771,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1789998509772,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1789998509773,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://caminhodamae.com.br","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1789998509960,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1789998510074,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1789998510167,"plugins":[]}
+{"_e":"metro:instantiate","_t":1789998512439,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"root:init","_t":1790018000122,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1790018000122,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1790018000124,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://caminhodamae.com.br","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1790018000314,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1790018000427,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1790018000518,"plugins":[]}
+{"_e":"metro:instantiate","_t":1790018002901,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"root:init","_t":1790020675043,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1790020675044,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1790020675045,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://caminhodamae.com.br","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1790020675236,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1790020675350,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1790020675446,"plugins":[]}
+{"_e":"metro:instantiate","_t":1790020677829,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1790020691314,"id":"1","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1790020691315,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1790020691318,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1790020691418,"id":"1","progress":0.06854876033057852,"total":275,"current":72}
+{"_e":"metro:bundling:progress","_t":1790020691518,"id":"1","progress":0.3413503627007254,"total":635,"current":371}
+{"_e":"metro:bundling:progress","_t":1790020691618,"id":"1","progress":0.491264923642923,"total":886,"current":621}
+{"_e":"metro:bundling:progress","_t":1790020691718,"id":"1","progress":0.8119596407861691,"total":1011,"current":911}
+{"_e":"metro:bundling:progress","_t":1790020691818,"id":"1","progress":0.9527626545610387,"total":1255,"current":1225}
+{"_e":"metro:bundling:progress","_t":1790020691919,"id":"1","progress":0.9875217859761182,"total":1438,"current":1429}
+{"_e":"metro:bundling:progress","_t":1790020692020,"id":"1","progress":0.9875217859761182,"total":1450,"current":1435}
+{"_e":"metro:bundling:progress","_t":1790020692120,"id":"1","progress":0.9875217859761182,"total":1505,"current":1444}
+{"_e":"metro:bundling:progress","_t":1790020692220,"id":"1","progress":0.9875217859761182,"total":1521,"current":1459}
+{"_e":"metro:bundling:progress","_t":1790020692320,"id":"1","progress":0.9875217859761182,"total":1543,"current":1478}
+{"_e":"metro:bundling:progress","_t":1790020692421,"id":"1","progress":0.9875217859761182,"total":1546,"current":1503}
+{"_e":"metro:bundling:progress","_t":1790020692522,"id":"1","progress":0.988682895257844,"total":1586,"current":1577}
+{"_e":"metro:bundling:progress","_t":1790020692622,"id":"1","progress":0.988682895257844,"total":1609,"current":1599}
+{"_e":"metro:bundling:progress","_t":1790020692726,"id":"1","progress":0.988682895257844,"total":1655,"current":1633}
+{"_e":"metro:bundling:progress","_t":1790020692825,"id":"1","progress":0.988682895257844,"total":1753,"current":1701}
+{"_e":"metro:bundling:progress","_t":1790020692926,"id":"1","progress":0.988682895257844,"total":1779,"current":1768}
+{"_e":"metro:bundling:done","_t":1790020693071,"id":"1","total":1779,"ms":1756.617864}
+{"_e":"metro:bundling:started","_t":1790020773055,"id":"2","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1790020773056,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1790020773091,"id":"2","total":1,"ms":35.112155}
+{"_e":"metro:bundling:started","_t":1790020919921,"id":"3","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1790020919921,"id":"3","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1790020919959,"id":"3","total":1,"ms":38.166977}
+{"_e":"metro:client_log","_t":1790020935968,"level":"warn","data":["No task registered for key expo-task-manager"]}
+{"_e":"root:init","_t":1790021566337,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1790021566338,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1790021566340,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://caminhodamae.com.br","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1790021566590,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1790021566723,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1790021566845,"plugins":[]}
+{"_e":"metro:instantiate","_t":1790021569202,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1790021683474,"id":"1","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1790021683474,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1790021683477,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1790021683577,"id":"1","progress":0.07438016528925619,"total":319,"current":87}
+{"_e":"metro:bundling:progress","_t":1790021683677,"id":"1","progress":0.3329645583723685,"total":714,"current":412}
+{"_e":"metro:bundling:progress","_t":1790021683777,"id":"1","progress":0.6444040174852484,"total":1019,"current":818}
+{"_e":"metro:bundling:progress","_t":1790021683877,"id":"1","progress":0.8636958777580583,"total":1189,"current":1105}
+{"_e":"metro:bundling:progress","_t":1790021683977,"id":"1","progress":0.9301477384302437,"total":1603,"current":1546}
+{"_e":"metro:bundling:done","_t":1790021684071,"id":"1","total":1603,"ms":596.775479}
+{"_e":"metro:bundling:started","_t":1790021722066,"id":"2","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1790021722066,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1790021722100,"id":"2","total":1,"ms":34.291914}
