@@ -13,8 +13,17 @@ import { Stack, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { apiFetch } from '../lib/api';
 
+type TipoUsuario = 'peregrino' | 'apoio' | 'local';
+
+const TIPOS: { valor: TipoUsuario; rotulo: string }[] = [
+  { valor: 'peregrino', rotulo: 'Peregrino' },
+  { valor: 'apoio', rotulo: 'Apoio' },
+  { valor: 'local', rotulo: 'Local fixo' },
+];
+
 export default function CadastrarUsuario() {
   const [salvando, setSalvando] = useState(false);
+  const [tipoUsuario, setTipoUsuario] = useState<TipoUsuario>('peregrino');
   const [nome, setNome] = useState('');
   const [sobrenome, setSobrenome] = useState('');
   const [idade, setIdade] = useState('');
@@ -23,11 +32,14 @@ export default function CadastrarUsuario() {
   const [contatoNome, setContatoNome] = useState('');
   const [contatoTelefone, setContatoTelefone] = useState('');
 
+  const ehLocal = tipoUsuario === 'local';
+
   // Preenchido só depois de cadastrar com sucesso — troca o formulário
   // pela tela de "aqui está o crachá" com o QR code.
   const [cadastrado, setCadastrado] = useState<{
     nome: string;
     accessCode: string;
+    ehLocal: boolean;
   } | null>(null);
 
   const cadastrar = async () => {
@@ -47,17 +59,19 @@ export default function CadastrarUsuario() {
         body: JSON.stringify({
           nome: nome.trim(),
           sobrenome: sobrenome || null,
-          idade: idade ? Number(idade) : null,
-          tipo_sanguineo: tipoSanguineo || null,
-          telefone: telefone || null,
-          contato_emergencia_nome: contatoNome || null,
-          contato_emergencia_telefone: contatoTelefone || null,
+          idade: ehLocal ? null : idade ? Number(idade) : null,
+          tipo_sanguineo: ehLocal ? null : tipoSanguineo || null,
+          telefone: ehLocal ? null : telefone || null,
+          contato_emergencia_nome: ehLocal ? null : contatoNome || null,
+          contato_emergencia_telefone: ehLocal ? null : contatoTelefone || null,
+          tipo_usuario: tipoUsuario,
         }),
       });
 
       setCadastrado({
         nome: [resultado.nome, resultado.sobrenome].filter(Boolean).join(' '),
         accessCode: resultado.access_code,
+        ehLocal,
       });
     } catch (erro: any) {
       Alert.alert('Erro', erro.message || 'Não foi possível cadastrar o peregrino.');
@@ -68,6 +82,7 @@ export default function CadastrarUsuario() {
 
   const limparECadastrarOutro = () => {
     setCadastrado(null);
+    setTipoUsuario('peregrino');
     setNome('');
     setSobrenome('');
     setIdade('');
@@ -85,16 +100,27 @@ export default function CadastrarUsuario() {
         <SafeAreaView style={styles.container} edges={['bottom']}>
           <ScrollView contentContainerStyle={styles.scrollSucesso}>
             <Text style={styles.tituloSucesso}>{cadastrado.nome}</Text>
-            <Text style={styles.avisoSucesso}>
-              Escaneie este QR code (ou digite o código abaixo) na tela de login pessoal
-              do app. Ele só aparece aqui — anote ou imprima agora.
-            </Text>
 
-            <View style={styles.qrWrapper}>
-              <QRCode value={cadastrado.accessCode} size={220} />
-            </View>
+            {cadastrado.ehLocal ? (
+              <Text style={styles.avisoSucesso}>
+                Pontos fixos não precisam de login. Pra posicionar esse ponto no mapa, vá
+                em "Membros do grupo", toque nele e escolha "Definir posição aqui" estando
+                no local certo.
+              </Text>
+            ) : (
+              <>
+                <Text style={styles.avisoSucesso}>
+                  Escaneie este QR code (ou digite o código abaixo) na tela de login
+                  pessoal do app. Ele só aparece aqui — anote ou imprima agora.
+                </Text>
 
-            <Text style={styles.codigoTexto}>{cadastrado.accessCode}</Text>
+                <View style={styles.qrWrapper}>
+                  <QRCode value={cadastrado.accessCode} size={220} />
+                </View>
+
+                <Text style={styles.codigoTexto}>{cadastrado.accessCode}</Text>
+              </>
+            )}
 
             <TouchableOpacity style={styles.botao} onPress={limparECadastrarOutro}>
               <Text style={styles.textoBotao}>Cadastrar outro peregrino</Text>
@@ -114,59 +140,88 @@ export default function CadastrarUsuario() {
       <Stack.Screen options={{ title: 'Cadastrar peregrino' }} />
       <SafeAreaView style={styles.container} edges={['bottom']}>
         <ScrollView contentContainerStyle={styles.scroll}>
+          <Text style={styles.rotulo}>Tipo *</Text>
+          <View style={styles.linhaTipos}>
+            {TIPOS.map((t) => (
+              <TouchableOpacity
+                key={t.valor}
+                style={[styles.chipTipo, tipoUsuario === t.valor && styles.chipTipoSelecionado]}
+                onPress={() => setTipoUsuario(t.valor)}
+              >
+                <Text
+                  style={[
+                    styles.textoChipTipo,
+                    tipoUsuario === t.valor && styles.textoChipTipoSelecionado,
+                  ]}
+                >
+                  {t.rotulo}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+
           <Text style={styles.ajuda}>
-            O código de acesso e o QR code são gerados automaticamente e mostrados só
-            uma vez — anote ou imprima antes de sair dessa tela.
+            {ehLocal
+              ? 'Um ponto fixo no mapa (posto de apoio, ponto de encontro) — não precisa de login, a posição é definida manualmente depois.'
+              : 'O código de acesso e o QR code são gerados automaticamente e mostrados só uma vez — anote ou imprima antes de sair dessa tela.'}
           </Text>
 
-          <Text style={styles.rotulo}>Nome *</Text>
+          <Text style={styles.rotulo}>{ehLocal ? 'Nome do local *' : 'Nome *'}</Text>
           <TextInput
             style={styles.input}
             value={nome}
             onChangeText={setNome}
-            placeholder="Nome do peregrino"
+            placeholder={ehLocal ? 'Ex: Posto de hidratação 1' : 'Nome do peregrino'}
           />
 
-          <Text style={styles.rotulo}>Sobrenome</Text>
-          <TextInput style={styles.input} value={sobrenome} onChangeText={setSobrenome} />
+          {!ehLocal && (
+            <>
+              <Text style={styles.rotulo}>Sobrenome</Text>
+              <TextInput style={styles.input} value={sobrenome} onChangeText={setSobrenome} />
 
-          <Text style={styles.rotulo}>Idade</Text>
-          <TextInput
-            style={styles.input}
-            value={idade}
-            onChangeText={setIdade}
-            keyboardType="number-pad"
-          />
+              <Text style={styles.rotulo}>Idade</Text>
+              <TextInput
+                style={styles.input}
+                value={idade}
+                onChangeText={setIdade}
+                keyboardType="number-pad"
+              />
 
-          <Text style={styles.rotulo}>Tipo sanguíneo</Text>
-          <TextInput
-            style={styles.input}
-            value={tipoSanguineo}
-            onChangeText={setTipoSanguineo}
-            placeholder="Ex: O+"
-            autoCapitalize="characters"
-          />
+              <Text style={styles.rotulo}>Tipo sanguíneo</Text>
+              <TextInput
+                style={styles.input}
+                value={tipoSanguineo}
+                onChangeText={setTipoSanguineo}
+                placeholder="Ex: O+"
+                autoCapitalize="characters"
+              />
 
-          <Text style={styles.rotulo}>Telefone</Text>
-          <TextInput
-            style={styles.input}
-            value={telefone}
-            onChangeText={setTelefone}
-            keyboardType="phone-pad"
-          />
+              <Text style={styles.rotulo}>Telefone</Text>
+              <TextInput
+                style={styles.input}
+                value={telefone}
+                onChangeText={setTelefone}
+                keyboardType="phone-pad"
+              />
 
-          <Text style={styles.secao}>Contato de emergência</Text>
+              <Text style={styles.secao}>Contato de emergência</Text>
 
-          <Text style={styles.rotulo}>Nome do contato</Text>
-          <TextInput style={styles.input} value={contatoNome} onChangeText={setContatoNome} />
+              <Text style={styles.rotulo}>Nome do contato</Text>
+              <TextInput
+                style={styles.input}
+                value={contatoNome}
+                onChangeText={setContatoNome}
+              />
 
-          <Text style={styles.rotulo}>Telefone do contato</Text>
-          <TextInput
-            style={styles.input}
-            value={contatoTelefone}
-            onChangeText={setContatoTelefone}
-            keyboardType="phone-pad"
-          />
+              <Text style={styles.rotulo}>Telefone do contato</Text>
+              <TextInput
+                style={styles.input}
+                value={contatoTelefone}
+                onChangeText={setContatoTelefone}
+                keyboardType="phone-pad"
+              />
+            </>
+          )}
 
           <TouchableOpacity style={styles.botao} onPress={cadastrar} disabled={salvando}>
             <Text style={styles.textoBotao}>{salvando ? 'Cadastrando...' : 'Cadastrar'}</Text>
@@ -191,6 +246,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   secao: { fontSize: 16, fontWeight: '700', marginTop: 24, marginBottom: 4 },
+  linhaTipos: { flexDirection: 'row', gap: 8 },
+  chipTipo: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#007AFF',
+    borderRadius: 20,
+    paddingVertical: 8,
+    alignItems: 'center',
+  },
+  chipTipoSelecionado: { backgroundColor: '#007AFF' },
+  textoChipTipo: { color: '#007AFF', fontWeight: '600', fontSize: 13 },
+  textoChipTipoSelecionado: { color: '#fff' },
   botao: {
     backgroundColor: '#007AFF',
     borderRadius: 8,

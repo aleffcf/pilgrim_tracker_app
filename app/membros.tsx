@@ -10,15 +10,25 @@ import {
   ScrollView,
 } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
+import * as Location from 'expo-location';
 import { Stack, router, useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { apiFetch } from '../lib/api';
+
+type TipoUsuario = 'peregrino' | 'apoio' | 'local';
+
+const RECITULO_TIPO: Record<TipoUsuario, string> = {
+  peregrino: 'Peregrino',
+  apoio: 'Apoio',
+  local: 'Local fixo',
+};
 
 type Membro = {
   id: number;
   nome: string | null;
   sobrenome: string | null;
   is_admin: boolean;
+  tipo_usuario: TipoUsuario;
 };
 
 function nomeExibicao(m: Membro): string {
@@ -81,9 +91,58 @@ export default function Membros() {
     }
   };
 
+  const trocarTipo = (membro: Membro) => {
+    const opcoes = (Object.keys(RECITULO_TIPO) as TipoUsuario[])
+      .filter((t) => t !== membro.tipo_usuario)
+      .map((tipo) => ({
+        text: `Tornar "${RECITULO_TIPO[tipo]}"`,
+        onPress: async () => {
+          try {
+            await apiFetch(`/user/${membro.id}/tipo`, {
+              method: 'PUT',
+              body: JSON.stringify({ tipo_usuario: tipo }),
+            });
+            carregar();
+          } catch {
+            Alert.alert('Erro', 'Não foi possível trocar o tipo.');
+          }
+        },
+      }));
+    opcoes.push({ text: 'Cancelar', style: 'cancel' } as any);
+    Alert.alert('Trocar tipo', `Tipo atual: ${RECITULO_TIPO[membro.tipo_usuario]}`, opcoes);
+  };
+
+  const definirPosicaoAqui = async (membro: Membro) => {
+    try {
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        Alert.alert('Permissão necessária', 'Preciso da sua localização pra marcar o ponto.');
+        return;
+      }
+      const atual = await Location.getCurrentPositionAsync({});
+      await apiFetch(`/user/${membro.id}/location`, {
+        method: 'PUT',
+        body: JSON.stringify({
+          latitude: atual.coords.latitude,
+          longitude: atual.coords.longitude,
+        }),
+      });
+      Alert.alert('Pronto', `${nomeExibicao(membro)} posicionado na sua localização atual.`);
+    } catch {
+      Alert.alert('Erro', 'Não foi possível definir a posição.');
+    }
+  };
+
   const abrirOpcoes = (membro: Membro) => {
-    const opcoes: any[] = [
-      {
+    const opcoes: any[] = [];
+
+    if (membro.tipo_usuario === 'local') {
+      opcoes.push({
+        text: 'Definir posição aqui (usar minha localização atual)',
+        onPress: () => definirPosicaoAqui(membro),
+      });
+    } else {
+      opcoes.push({
         text: 'Resetar código de acesso',
         onPress: () =>
           Alert.alert(
@@ -94,20 +153,22 @@ export default function Membros() {
               { text: 'Resetar', style: 'destructive', onPress: () => resetarCodigo(membro) },
             ]
           ),
-      },
-    ];
-    if (!membro.is_admin) {
-      opcoes.push({ text: 'Promover a admin', onPress: () => promoverAdmin(membro) });
-    } else {
-      opcoes.push({
-        text: 'Rebaixar para peregrino',
-        style: 'destructive',
-        onPress: () => rebaixarAdmin(membro),
       });
+      if (!membro.is_admin) {
+        opcoes.push({ text: 'Promover a admin', onPress: () => promoverAdmin(membro) });
+      } else {
+        opcoes.push({
+          text: 'Rebaixar para peregrino',
+          style: 'destructive',
+          onPress: () => rebaixarAdmin(membro),
+        });
+      }
     }
+
+    opcoes.push({ text: 'Trocar tipo', onPress: () => trocarTipo(membro) });
     opcoes.push({ text: 'Cancelar', style: 'cancel' });
 
-    Alert.alert(nomeExibicao(membro), undefined, opcoes);
+    Alert.alert(nomeExibicao(membro), `Tipo: ${RECITULO_TIPO[membro.tipo_usuario]}`, opcoes);
   };
 
   // Tela de resultado do reset — mostra o novo QR code
@@ -159,7 +220,12 @@ export default function Membros() {
             }
             renderItem={({ item }) => (
               <TouchableOpacity style={styles.itemMembro} onPress={() => abrirOpcoes(item)}>
-                <Text style={styles.nomeMembro}>{nomeExibicao(item)}</Text>
+                <View style={styles.infoMembro}>
+                  <Text style={styles.nomeMembro}>{nomeExibicao(item)}</Text>
+                  {item.tipo_usuario !== 'peregrino' && (
+                    <Text style={styles.subtituloMembro}>{RECITULO_TIPO[item.tipo_usuario]}</Text>
+                  )}
+                </View>
                 {item.is_admin && (
                   <View style={styles.badgeAdmin}>
                     <Text style={styles.textoBadgeAdmin}>Admin</Text>
@@ -194,7 +260,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#eee',
   },
+  infoMembro: { flex: 1 },
   nomeMembro: { fontSize: 16 },
+  subtituloMembro: { fontSize: 12, color: '#888', marginTop: 2 },
   badgeAdmin: {
     backgroundColor: '#007AFF',
     borderRadius: 12,

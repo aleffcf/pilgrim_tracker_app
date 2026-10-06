@@ -31,12 +31,32 @@ type Pessoa = {
   longitude: number;
   last_seen_at: string;
   sos_ativo: boolean;
+  tipo_usuario: 'peregrino' | 'apoio' | 'local' | string;
+  is_admin: boolean;
 };
 
 /** Nome de exibição — cai pra um rótulo genérico se ainda não preencheu o perfil. */
 function nomeExibicao(p: { nome: string | null; sobrenome: string | null }): string {
   const partes = [p.nome, p.sobrenome].filter(Boolean);
   return partes.length > 0 ? partes.join(' ') : 'Peregrino sem nome cadastrado';
+}
+
+/** Define emoji + cor do pin — nunca usa pinColor nativo (evita o crash do
+ * react-native-maps ao trocar pra undefined), tudo é View/Text customizado. */
+function iconePessoa(pessoa: Pessoa, souAdminVisualizando: boolean) {
+  if (souAdminVisualizando && pessoa.sos_ativo) {
+    return { emoji: '⚠️', cor: '#D32F2F' };
+  }
+  if (pessoa.tipo_usuario === 'apoio') {
+    return { emoji: '🛒', cor: '#F9A825' };
+  }
+  if (pessoa.tipo_usuario === 'local') {
+    return { emoji: '🏠', cor: '#6D4C41' };
+  }
+  if (pessoa.is_admin) {
+    return { emoji: '🧍', cor: '#8E24AA' }; // mesmo ícone do peregrino, cor diferente
+  }
+  return { emoji: '🧍', cor: '#1976D2' };
 }
 
 type MeInfo = {
@@ -278,6 +298,7 @@ export default function Mapa() {
     ];
     if (me?.is_admin) {
       opcoes.push({ text: 'Membros do grupo', onPress: () => router.push('/membros') });
+      opcoes.push({ text: 'Chamada', onPress: () => router.push('/chamada') });
       opcoes.push({ text: 'Alertas de SOS', onPress: () => router.push('/alertas') });
       opcoes.push({ text: 'Cadastrar peregrino', onPress: () => router.push('/cadastrar-usuario') });
     }
@@ -320,23 +341,29 @@ export default function Mapa() {
               usuário já aparece na lista de /pessoas, igual todo mundo,
               evitando duplicar o pin com a posição do GPS local do aparelho. */}
 
-          {pessoas.map((pessoa) => (
-            <Marker
-              key={pessoa.id}
-              coordinate={{ latitude: pessoa.latitude, longitude: pessoa.longitude }}
-              title={nomeExibicao(pessoa)}
-              description={
-                [
-                  pessoa.tipo_sanguineo ? `Tipo sanguíneo: ${pessoa.tipo_sanguineo}` : null,
-                  me?.is_admin && pessoa.sos_ativo ? '⚠️ Pediu socorro' : null,
-                ]
-                  .filter(Boolean)
-                  .join(' — ') || undefined
-              }
-              pinColor={me?.is_admin && pessoa.sos_ativo ? 'red' : undefined}
-              onPress={() => tocarPessoa(pessoa)}
-            />
-          ))}
+          {pessoas.map((pessoa) => {
+            const { emoji, cor } = iconePessoa(pessoa, !!me?.is_admin);
+            return (
+              <Marker
+                key={pessoa.id}
+                coordinate={{ latitude: pessoa.latitude, longitude: pessoa.longitude }}
+                title={nomeExibicao(pessoa)}
+                description={
+                  [
+                    pessoa.tipo_sanguineo ? `Tipo sanguíneo: ${pessoa.tipo_sanguineo}` : null,
+                    me?.is_admin && pessoa.sos_ativo ? '⚠️ Pediu socorro' : null,
+                  ]
+                    .filter(Boolean)
+                    .join(' — ') || undefined
+                }
+                onPress={() => tocarPessoa(pessoa)}
+              >
+                <View style={[styles.marcadorPessoa, { backgroundColor: cor }]}>
+                  <Text style={styles.emojiMarcador}>{emoji}</Text>
+                </View>
+              </Marker>
+            );
+          })}
         </MapView>
 
         {/* Banner de SOS — só aparece pro admin, quando há alerta(s) ativo(s) */}
@@ -479,6 +506,21 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
   },
   iconeBotao: { fontSize: 20 },
+  marcadorPessoa: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: '#fff',
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
+    shadowOffset: { width: 0, height: 1 },
+  },
+  emojiMarcador: { fontSize: 18 },
   bannerSos: {
     position: 'absolute',
     top: 72,
