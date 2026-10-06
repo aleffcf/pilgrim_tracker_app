@@ -14,6 +14,7 @@ import * as Location from 'expo-location';
 import { Stack, router, useFocusEffect } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { apiFetch } from '../lib/api';
+import MenuAcoes, { OpcaoMenu } from '../components/MenuAcoes';
 
 type TipoUsuario = 'peregrino' | 'apoio' | 'local';
 
@@ -42,6 +43,8 @@ export default function Membros() {
   const [codigoResetado, setCodigoResetado] = useState<{ nome: string; codigo: string } | null>(
     null
   );
+  const [membroSelecionado, setMembroSelecionado] = useState<Membro | null>(null);
+  const [trocandoTipoDe, setTrocandoTipoDe] = useState<Membro | null>(null);
 
   const carregar = useCallback(async () => {
     setCarregando(true);
@@ -91,26 +94,26 @@ export default function Membros() {
     }
   };
 
-  const trocarTipo = (membro: Membro) => {
-    const opcoes = (Object.keys(RECITULO_TIPO) as TipoUsuario[])
-      .filter((t) => t !== membro.tipo_usuario)
-      .map((tipo) => ({
-        text: `Tornar "${RECITULO_TIPO[tipo]}"`,
-        onPress: async () => {
-          try {
-            await apiFetch(`/user/${membro.id}/tipo`, {
-              method: 'PUT',
-              body: JSON.stringify({ tipo_usuario: tipo }),
-            });
-            carregar();
-          } catch {
-            Alert.alert('Erro', 'Não foi possível trocar o tipo.');
-          }
-        },
-      }));
-    opcoes.push({ text: 'Cancelar', style: 'cancel' } as any);
-    Alert.alert('Trocar tipo', `Tipo atual: ${RECITULO_TIPO[membro.tipo_usuario]}`, opcoes);
+  const aplicarNovoTipo = async (membro: Membro, tipo: TipoUsuario) => {
+    try {
+      await apiFetch(`/user/${membro.id}/tipo`, {
+        method: 'PUT',
+        body: JSON.stringify({ tipo_usuario: tipo }),
+      });
+      carregar();
+    } catch {
+      Alert.alert('Erro', 'Não foi possível trocar o tipo.');
+    }
   };
+
+  const opcoesTrocaTipo: OpcaoMenu[] = trocandoTipoDe
+    ? (Object.keys(RECITULO_TIPO) as TipoUsuario[])
+        .filter((t) => t !== trocandoTipoDe.tipo_usuario)
+        .map((tipo) => ({
+          label: `Tornar "${RECITULO_TIPO[tipo]}"`,
+          onPress: () => aplicarNovoTipo(trocandoTipoDe, tipo),
+        }))
+    : [];
 
   const definirPosicaoAqui = async (membro: Membro) => {
     try {
@@ -133,43 +136,38 @@ export default function Membros() {
     }
   };
 
-  const abrirOpcoes = (membro: Membro) => {
-    const opcoes: any[] = [];
-
-    if (membro.tipo_usuario === 'local') {
-      opcoes.push({
-        text: 'Definir posição aqui (usar minha localização atual)',
-        onPress: () => definirPosicaoAqui(membro),
-      });
-    } else {
-      opcoes.push({
-        text: 'Resetar código de acesso',
-        onPress: () =>
-          Alert.alert(
-            'Resetar código?',
-            `O código atual de ${nomeExibicao(membro)} deixará de funcionar imediatamente.`,
-            [
-              { text: 'Cancelar', style: 'cancel' },
-              { text: 'Resetar', style: 'destructive', onPress: () => resetarCodigo(membro) },
-            ]
-          ),
-      });
-      if (!membro.is_admin) {
-        opcoes.push({ text: 'Promover a admin', onPress: () => promoverAdmin(membro) });
-      } else {
-        opcoes.push({
-          text: 'Rebaixar para peregrino',
-          style: 'destructive',
-          onPress: () => rebaixarAdmin(membro),
-        });
-      }
-    }
-
-    opcoes.push({ text: 'Trocar tipo', onPress: () => trocarTipo(membro) });
-    opcoes.push({ text: 'Cancelar', style: 'cancel' });
-
-    Alert.alert(nomeExibicao(membro), `Tipo: ${RECITULO_TIPO[membro.tipo_usuario]}`, opcoes);
+  const confirmarReset = (membro: Membro) => {
+    Alert.alert(
+      'Resetar código?',
+      `O código atual de ${nomeExibicao(membro)} deixará de funcionar imediatamente.`,
+      [
+        { text: 'Cancelar', style: 'cancel' },
+        { text: 'Resetar', style: 'destructive', onPress: () => resetarCodigo(membro) },
+      ]
+    );
   };
+
+  const opcoesMembro: OpcaoMenu[] = membroSelecionado
+    ? membroSelecionado.tipo_usuario === 'local'
+      ? [
+          {
+            label: 'Definir posição aqui (usar minha localização atual)',
+            onPress: () => definirPosicaoAqui(membroSelecionado),
+          },
+          { label: 'Trocar tipo', onPress: () => setTrocandoTipoDe(membroSelecionado) },
+        ]
+      : [
+          { label: 'Resetar código de acesso', onPress: () => confirmarReset(membroSelecionado) },
+          membroSelecionado.is_admin
+            ? {
+                label: 'Rebaixar para peregrino',
+                destrutivo: true,
+                onPress: () => rebaixarAdmin(membroSelecionado),
+              }
+            : { label: 'Promover a admin', onPress: () => promoverAdmin(membroSelecionado) },
+          { label: 'Trocar tipo', onPress: () => setTrocandoTipoDe(membroSelecionado) },
+        ]
+    : [];
 
   // Tela de resultado do reset — mostra o novo QR code
   if (codigoResetado) {
@@ -219,7 +217,7 @@ export default function Membros() {
               <Text style={styles.semMembros}>Nenhum membro cadastrado ainda.</Text>
             }
             renderItem={({ item }) => (
-              <TouchableOpacity style={styles.itemMembro} onPress={() => abrirOpcoes(item)}>
+              <TouchableOpacity style={styles.itemMembro} onPress={() => setMembroSelecionado(item)}>
                 <View style={styles.infoMembro}>
                   <Text style={styles.nomeMembro}>{nomeExibicao(item)}</Text>
                   {item.tipo_usuario !== 'peregrino' && (
@@ -242,6 +240,22 @@ export default function Membros() {
         >
           <Text style={styles.textoBotao}>+ Cadastrar novo peregrino</Text>
         </TouchableOpacity>
+
+        <MenuAcoes
+          visivel={membroSelecionado !== null}
+          titulo={membroSelecionado ? nomeExibicao(membroSelecionado) : undefined}
+          subtitulo={membroSelecionado ? `Tipo: ${RECITULO_TIPO[membroSelecionado.tipo_usuario]}` : undefined}
+          opcoes={opcoesMembro}
+          aoFechar={() => setMembroSelecionado(null)}
+        />
+
+        <MenuAcoes
+          visivel={trocandoTipoDe !== null}
+          titulo="Trocar tipo"
+          subtitulo={trocandoTipoDe ? `Tipo atual: ${RECITULO_TIPO[trocandoTipoDe.tipo_usuario]}` : undefined}
+          opcoes={opcoesTrocaTipo}
+          aoFechar={() => setTrocandoTipoDe(null)}
+        />
       </SafeAreaView>
     </>
   );

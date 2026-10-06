@@ -17,6 +17,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { apiFetch, getToken, clearSession } from '../lib/api';
 import { iniciarRastreamento } from '../lib/locationTask';
 import { abrirConfiguracoesBateria } from '../lib/battery';
+import MenuAcoes, { OpcaoMenu } from '../components/MenuAcoes';
 
 const INTERVALO_POLLING_MS = 15000; // busca os outros peregrinos a cada 15s
 const DELTA_PADRAO = 0.05;
@@ -85,6 +86,7 @@ export default function Mapa() {
 
   const [buscaAberta, setBuscaAberta] = useState(false);
   const [termoBusca, setTermoBusca] = useState('');
+  const [menuAberto, setMenuAberto] = useState(false);
 
   const buscarPessoas = async () => {
     try {
@@ -291,29 +293,26 @@ export default function Mapa() {
     }
   };
 
-  const abrirMenu = () => {
-    const opcoes: any[] = [
-      { text: 'Meu perfil', onPress: () => router.push('/perfil') },
-      { text: 'Configurar economia de bateria', onPress: abrirConfiguracoesBateria },
-    ];
-    if (me?.is_admin) {
-      opcoes.push({ text: 'Membros do grupo', onPress: () => router.push('/membros') });
-      opcoes.push({ text: 'Chamada', onPress: () => router.push('/chamada') });
-      opcoes.push({ text: 'Alertas de SOS', onPress: () => router.push('/alertas') });
-      opcoes.push({ text: 'Cadastrar peregrino', onPress: () => router.push('/cadastrar-usuario') });
-    }
-    opcoes.push({
-      text: 'Sair',
-      style: 'destructive',
+  const opcoesMenu: OpcaoMenu[] = [
+    { label: 'Meu perfil', onPress: () => router.push('/perfil') },
+    { label: 'Configurar economia de bateria', onPress: abrirConfiguracoesBateria },
+    ...(me?.is_admin
+      ? [
+          { label: 'Membros do grupo', onPress: () => router.push('/membros') },
+          { label: 'Chamada', onPress: () => router.push('/chamada') },
+          { label: 'Alertas de SOS', onPress: () => router.push('/alertas') },
+          { label: 'Cadastrar peregrino', onPress: () => router.push('/cadastrar-usuario') },
+        ]
+      : []),
+    {
+      label: 'Sair',
+      destrutivo: true,
       onPress: async () => {
         await clearSession();
         router.replace('/');
       },
-    });
-    opcoes.push({ text: 'Cancelar', style: 'cancel' });
-
-    Alert.alert('Menu', undefined, opcoes);
-  };
+    },
+  ];
 
   if (carregandoLocalizacaoInicial) {
     return (
@@ -379,7 +378,7 @@ export default function Mapa() {
         )}
 
         {/* Menu (canto superior esquerdo) */}
-        <TouchableOpacity style={styles.botaoMenu} onPress={abrirMenu} accessibilityLabel="Menu">
+        <TouchableOpacity style={styles.botaoMenu} onPress={() => setMenuAberto(true)} accessibilityLabel="Menu">
           <Text style={styles.iconeBotao}>☰</Text>
         </TouchableOpacity>
 
@@ -464,6 +463,13 @@ export default function Mapa() {
             />
           </View>
         )}
+
+        <MenuAcoes
+          visivel={menuAberto}
+          titulo="Menu"
+          opcoes={opcoesMenu}
+          aoFechar={() => setMenuAberto(false)}
+        />
       </SafeAreaView>
     </>
   );
@@ -540,7 +546,7 @@ const styles = StyleSheet.create({
   botaoRecentralizar: {
     position: 'absolute',
     bottom: 108,
-    right: 16,
+    left: 16,
     backgroundColor: '#fff',
     width: 48,
     height: 48,
@@ -556,7 +562,7 @@ const styles = StyleSheet.create({
   botaoSos: {
     position: 'absolute',
     bottom: 32,
-    right: 16,
+    left: 16,
     backgroundColor: '#D32F2F',
     width: 64,
     height: 64,

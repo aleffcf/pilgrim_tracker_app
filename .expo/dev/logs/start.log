@@ -892,3 +892,27 @@
 {"_e":"metro:bundling:progress","_t":1791256318227,"id":"3","progress":0,"total":1,"current":0}
 {"_e":"metro:bundling:done","_t":1791256318262,"id":"3","total":1,"ms":35.810894}
 {"_e":"metro:client_log","_t":1791256328132,"level":"warn","data":["No task registered for key expo-task-manager"]}
+{"_e":"root:init","_t":1791285393255,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1791285393256,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1791285393257,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://caminhodamae.com.br","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1791285393452,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1791285393569,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1791285393666,"plugins":[]}
+{"_e":"metro:instantiate","_t":1791285396046,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1791285410743,"id":"1","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1791285410743,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791285410746,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1791285410846,"id":"1","progress":0.073423517169615,"total":310,"current":84}
+{"_e":"metro:bundling:progress","_t":1791285410946,"id":"1","progress":0.33951267902535803,"total":635,"current":370}
+{"_e":"metro:bundling:progress","_t":1791285411046,"id":"1","progress":0.5760167216628294,"total":921,"current":699}
+{"_e":"metro:bundling:progress","_t":1791285411146,"id":"1","progress":0.8205193703459326,"total":1030,"current":933}
+{"_e":"metro:bundling:progress","_t":1791285411246,"id":"1","progress":0.88906748560951,"total":1226,"current":1156}
+{"_e":"metro:bundling:progress","_t":1791285411346,"id":"1","progress":0.88906748560951,"total":1556,"current":1434}
+{"_e":"metro:bundling:progress","_t":1791285411446,"id":"1","progress":0.9965821728214642,"total":1754,"current":1751}
+{"_e":"metro:bundling:progress","_t":1791285411555,"id":"1","progress":0.9977207984616365,"total":1754,"current":1752}
+{"_e":"metro:bundling:done","_t":1791285411662,"id":"1","total":1754,"ms":918.989076}
+{"_e":"metro:client_log","_t":1791285435706,"level":"warn","data":["No task registered for key expo-task-manager"]}
+{"_e":"metro:bundling:started","_t":1791285762263,"id":"2","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1791285762263,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1791285762301,"id":"2","total":1,"ms":37.634116}
+{"_e":"metro:client_log","_t":1791286557848,"level":"error","data":["Falha ao enviar localização em segundo plano:","[Error: fetch failed: java.net.NoRouteToHostException: Host unreachable]","\n\n\u001b[1mCode: CodedError.ts\u001b[22m\n\u001b[0m \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   constructor(code\u001b[33m:\u001b[39m string\u001b[33m,\u001b[39m message\u001b[33m:\u001b[39m string) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 11 |\u001b[39m     \u001b[36msuper\u001b[39m(message)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 12 |\u001b[39m     \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mcode \u001b[33m=\u001b[39m code\u001b[33m;\u001b[39m\n \u001b[90m 13 |\u001b[39m   }\n \u001b[90m 14 |\u001b[39m }\u001b[0m\n\u001b[1mCall Stack\u001b[22m\n\u001b[2m\u001b[90m  constructor (\u001b]8;;node_modules/expo/node_modules/expo-modules-core/src/errors/CodedError.ts:11:10\u0007node_modules/expo/node_modules/expo-modules-core/src/errors/CodedError.ts:11:10\u001b]8;;\u0007)\u001b[39m\u001b[22m"]}
