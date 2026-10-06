@@ -4,6 +4,7 @@ import { Stack, router } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { apiFetch, saveToken } from '../lib/api';
+import { getDeviceId } from '../lib/device';
 
 export default function LoginPessoal() {
   const [joinCode, setJoinCode] = useState<string | null>(null);
@@ -32,18 +33,23 @@ export default function LoginPessoal() {
 
     setCarregando(true);
     try {
+      const deviceId = await getDeviceId();
       const resultado = await apiFetch('/login', {
         method: 'POST',
         body: JSON.stringify({
           tenant_join_code: joinCode,
           access_code: accessCode.trim(),
+          device_id: deviceId,
         }),
       });
 
       await saveToken(resultado.access_token);
       router.replace('/mapa');
-    } catch (erro) {
-      Alert.alert('Código inválido', 'Confira o código com o organizador do grupo.');
+    } catch (erro: any) {
+      const mensagem = erro.message?.includes('outro aparelho')
+        ? erro.message
+        : 'Confira o código com o organizador do grupo.';
+      Alert.alert('Não foi possível entrar', mensagem);
     } finally {
       setCarregando(false);
     }

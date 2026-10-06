@@ -13,11 +13,14 @@ import { Stack, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MapView, { PROVIDER_GOOGLE, Marker, Polyline } from 'react-native-maps';
 import * as Location from 'expo-location';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { apiFetch, getToken, clearSession } from '../lib/api';
 import { iniciarRastreamento } from '../lib/locationTask';
+import { abrirConfiguracoesBateria } from '../lib/battery';
 
 const INTERVALO_POLLING_MS = 15000; // busca os outros peregrinos a cada 15s
 const DELTA_PADRAO = 0.05;
+const CHAVE_BATERIA_JA_SUGERIDA = 'bateria_prompt_mostrado';
 
 type Pessoa = {
   id: number;
@@ -58,6 +61,7 @@ export default function Mapa() {
   const [rota, setRota] = useState<{ latitude: number; longitude: number }[]>([]);
   const [me, setMe] = useState<MeInfo | null>(null);
   const [enviandoSos, setEnviandoSos] = useState(false);
+  const [alertasSosAtivos, setAlertasSosAtivos] = useState(0);
 
   const [buscaAberta, setBuscaAberta] = useState(false);
   const [termoBusca, setTermoBusca] = useState('');
@@ -78,6 +82,17 @@ export default function Mapa() {
     try {
       const meAtualizado = await apiFetch('/me');
       setMe(meAtualizado);
+
+      // Só admin busca a contagem de alertas — evita chamada desnecessária
+      // (e um 403 inútil) pra peregrinos comuns.
+      if (meAtualizado.is_admin) {
+        try {
+          const ativos = await apiFetch('/sos/ativos');
+          setAlertasSosAtivos(ativos.length);
+        } catch {
+          // Não crítico — tenta de novo no próximo ciclo.
+        }
+      }
     } catch {
       // Se essa chamada falhar isoladamente, não é crítico — tenta de novo
       // no próximo ciclo do polling.
@@ -145,6 +160,21 @@ export default function Mapa() {
           'Permissão necessária',
           'Sem a permissão de localização (inclusive em segundo plano), seu grupo não vai conseguir te encontrar no mapa.'
         );
+      } else {
+        // Sugere desativar a otimização de bateria só na primeira vez —
+        // depois disso fica disponível de novo pelo menu, se quiser revisitar.
+        const jaSugerido = await AsyncStorage.getItem(CHAVE_BATERIA_JA_SUGERIDA);
+        if (!jaSugerido) {
+          await AsyncStorage.setItem(CHAVE_BATERIA_JA_SUGERIDA, 'true');
+          Alert.alert(
+            'Uma última configuração',
+            'Pra garantir que sua localização continue sendo compartilhada mesmo com a tela apagada, desative a otimização de bateria para este app nas configurações do celular.',
+            [
+              { text: 'Depois', style: 'cancel' },
+              { text: 'Abrir configurações', onPress: abrirConfiguracoesBateria },
+            ]
+          );
+        }
       }
 
       await buscarRota();
@@ -156,6 +186,24 @@ export default function Mapa() {
       if (intervaloRef.current) clearInterval(intervaloRef.current);
     };
   }, []);
+
+  const recentralizar = async () => {
+    try {
+      const localAtual = await Location.getCurrentPositionAsync({});
+      setLocalizacao(localAtual);
+      mapRef.current?.animateToRegion(
+        {
+          latitude: localAtual.coords.latitude,
+          longitude: localAtual.coords.longitude,
+          latitudeDelta: DELTA_PADRAO,
+          longitudeDelta: DELTA_PADRAO,
+        },
+        800
+      );
+    } catch {
+      Alert.alert('Erro', 'Não foi possível obter sua localização atual.');
+    }
+  };
 
   const irParaPessoa = (pessoa: Pessoa) => {
     mapRef.current?.animateToRegion(
@@ -226,6 +274,7 @@ export default function Mapa() {
   const abrirMenu = () => {
     const opcoes: any[] = [
       { text: 'Meu perfil', onPress: () => router.push('/perfil') },
+      { text: 'Configurar economia de bateria', onPress: abrirConfiguracoesBateria },
     ];
     if (me?.is_admin) {
       opcoes.push({ text: 'Membros do grupo', onPress: () => router.push('/membros') });
@@ -290,6 +339,18 @@ export default function Mapa() {
           ))}
         </MapView>
 
+        {/* Banner de SOS — só aparece pro admin, quando há alerta(s) ativo(s) */}
+        {me?.is_admin && alertasSosAtivos > 0 && (
+          <TouchableOpacity
+            style={styles.bannerSos}
+            onPress={() => router.push('/alertas')}
+          >
+            <Text style={styles.textoBannerSos}>
+              ⚠️ {alertasSosAtivos} {alertasSosAtivos === 1 ? 'alerta ativo' : 'alertas ativos'} — toque para ver
+            </Text>
+          </TouchableOpacity>
+        )}
+
         {/* Menu (canto superior esquerdo) */}
         <TouchableOpacity style={styles.botaoMenu} onPress={abrirMenu} accessibilityLabel="Menu">
           <Text style={styles.iconeBotao}>☰</Text>
@@ -302,6 +363,15 @@ export default function Mapa() {
           accessibilityLabel="Buscar peregrino"
         >
           <Text style={styles.iconeBotao}>🔍</Text>
+        </TouchableOpacity>
+
+        {/* Recentralizar (acima do SOS, canto inferior direito) */}
+        <TouchableOpacity
+          style={styles.botaoRecentralizar}
+          onPress={recentralizar}
+          accessibilityLabel="Centralizar no meu local"
+        >
+          <Text style={styles.iconeBotao}>🎯</Text>
         </TouchableOpacity>
 
         {/* SOS (canto inferior direito) — vira "Aguarde" enquanto o pedido
@@ -320,7 +390,12 @@ export default function Mapa() {
         </TouchableOpacity>
 
         {buscaAberta && (
-          <View style={styles.painelBusca}>
+          <View
+            style={[
+              styles.painelBusca,
+              me?.is_admin && alertasSosAtivos > 0 && styles.painelBuscaComBanner,
+            ]}
+          >
             <View style={styles.linhaBusca}>
               <TextInput
                 style={styles.inputBusca}
@@ -404,6 +479,38 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
   },
   iconeBotao: { fontSize: 20 },
+  bannerSos: {
+    position: 'absolute',
+    top: 72,
+    left: 16,
+    right: 16,
+    backgroundColor: '#D32F2F',
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 14,
+    elevation: 6,
+    shadowColor: '#000',
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 3 },
+  },
+  textoBannerSos: { color: '#fff', fontWeight: '700', textAlign: 'center' },
+  botaoRecentralizar: {
+    position: 'absolute',
+    bottom: 108,
+    right: 16,
+    backgroundColor: '#fff',
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 2 },
+  },
   botaoSos: {
     position: 'absolute',
     bottom: 32,
@@ -438,6 +545,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 3 },
   },
   linhaBusca: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  painelBuscaComBanner: { top: 116 },
   inputBusca: {
     flex: 1,
     borderWidth: 1,

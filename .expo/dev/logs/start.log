@@ -755,3 +755,23 @@
 {"_e":"metro:bundling:started","_t":1790021722066,"id":"2","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
 {"_e":"metro:bundling:progress","_t":1790021722066,"id":"2","progress":0,"total":1,"current":0}
 {"_e":"metro:bundling:done","_t":1790021722100,"id":"2","total":1,"ms":34.291914}
+{"_e":"root:init","_t":1790026002237,"format":"v0-jsonl","version":"57.0.25"}
+{"_e":"env:mode","_t":1790026002238,"nodeEnv":"development","babelEnv":"development","mode":"development"}
+{"_e":"env:load","_t":1790026002239,"mode":"development","files":["../../../.env"],"env":{"EXPO_PUBLIC_API_URL":"https://caminhodamae.com.br","GOOGLE_MAPS_API_KEY":"AIzaSyB2iBwGrYel7TCfZc3RRCttdX75u8ZnED4"}}
+{"_e":"devserver:start","_t":1790026002438,"mode":"development","web":true,"baseUrl":"","asyncRoutes":false,"routerRoot":"../../../app","serverComponents":false,"serverActions":false,"serverRendering":true,"apiRoutes":false,"exporting":false}
+{"_e":"metro:config","_t":1790026002552,"serverRoot":"../../..","projectRoot":"../../..","exporting":false,"flags":{"autolinkingModuleResolution":false,"serverActions":false,"serverComponents":false,"reactCompiler":true,"optimizeGraph":false,"treeshaking":false,"logbox":false}}
+{"_e":"expo:dev-tools-plugin:load","_t":1790026002649,"plugins":[]}
+{"_e":"metro:instantiate","_t":1790026004972,"atlas":false,"workers":10,"host":"::","port":8081}
+{"_e":"metro:bundling:started","_t":1790030921764,"id":"1","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1790030921764,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1790030921767,"id":"1","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:progress","_t":1790030921867,"id":"1","progress":0.18548394114217595,"total":339,"current":146}
+{"_e":"metro:bundling:progress","_t":1790030921967,"id":"1","progress":0.33089543145212796,"total":638,"current":367}
+{"_e":"metro:bundling:progress","_t":1790030922067,"id":"1","progress":0.5397750937109538,"total":980,"current":720}
+{"_e":"metro:bundling:progress","_t":1790030922167,"id":"1","progress":0.848631772268136,"total":1155,"current":1064}
+{"_e":"metro:bundling:progress","_t":1790030922267,"id":"1","progress":0.9290172739149368,"total":1577,"current":1520}
+{"_e":"metro:bundling:done","_t":1790030922368,"id":"1","total":1577,"ms":604.219365}
+{"_e":"metro:bundling:started","_t":1790031061554,"id":"2","platform":"android","environment":null,"entry":"node_modules/expo-router/entry.js"}
+{"_e":"metro:bundling:progress","_t":1790031061554,"id":"2","progress":0,"total":1,"current":0}
+{"_e":"metro:bundling:done","_t":1790031061592,"id":"2","total":1,"ms":37.691432}
+{"_e":"metro:client_log","_t":1790031077653,"level":"warn","data":["No task registered for key expo-task-manager"]}

@@ -5,6 +5,7 @@ import { Stack, router, useLocalSearchParams } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { apiFetch, saveToken } from '../lib/api';
+import { getDeviceId } from '../lib/device';
 
 export default function Scanner() {
   const { modo } = useLocalSearchParams<{ modo?: string }>();
@@ -34,14 +35,18 @@ export default function Scanner() {
     }
 
     try {
+      const deviceId = await getDeviceId();
       const resultado = await apiFetch('/login', {
         method: 'POST',
-        body: JSON.stringify({ tenant_join_code: joinCode, access_code: codigo }),
+        body: JSON.stringify({ tenant_join_code: joinCode, access_code: codigo, device_id: deviceId }),
       });
       await saveToken(resultado.access_token);
       router.replace('/mapa');
-    } catch {
-      Alert.alert('Código inválido', 'Esse QR code não corresponde a um código pessoal válido.', [
+    } catch (erro: any) {
+      const mensagem = erro.message?.includes('outro aparelho')
+        ? erro.message
+        : 'Esse QR code não corresponde a um código pessoal válido.';
+      Alert.alert('Não foi possível entrar', mensagem, [
         { text: 'Tentar de novo', onPress: () => setProcessando(false) },
       ]);
     }

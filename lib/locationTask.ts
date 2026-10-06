@@ -49,8 +49,8 @@ export async function iniciarRastreamento(): Promise<boolean> {
 
   await Location.startLocationUpdatesAsync(LOCATION_TASK_NAME, {
     accuracy: Location.Accuracy.Balanced,
-    timeInterval: 30000, // manda posição no máximo a cada 30s
-    distanceInterval: 25, // ou quando andar 25 metros, o que vier primeiro
+    timeInterval: 60000, // manda posição no máximo a cada 60s
+    distanceInterval: 50, // ou quando andar 50 metros, o que vier primeiro
     showsBackgroundLocationIndicator: true, // iOS: mostra que está rastreando
     foregroundService: {
       // Android exige uma notificação visível durante rastreamento em segundo plano
