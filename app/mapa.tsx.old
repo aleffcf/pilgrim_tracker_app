@@ -64,7 +64,6 @@ type MeInfo = {
   id: number;
   is_admin: boolean;
   sos_ativo: boolean;
-  presente: boolean;
 };
 
 export default function Mapa() {
@@ -294,20 +293,7 @@ export default function Mapa() {
     }
   };
 
-  const marcarPresenca = async () => {
-    try {
-      await apiFetch('/presenca/checkin', { method: 'POST' });
-      setMe((atual) => (atual ? { ...atual, presente: true } : atual));
-      Alert.alert('Presença marcada!', 'Os organizadores já sabem que você chegou.');
-    } catch {
-      Alert.alert('Erro', 'Não foi possível marcar presença. Tente novamente.');
-    }
-  };
-
   const opcoesMenu: OpcaoMenu[] = [
-    me?.presente
-      ? { label: '✓ Presença já marcada', onPress: () => {} }
-      : { label: 'Cheguei! Marcar presença', onPress: marcarPresenca },
     { label: 'Meu perfil', onPress: () => router.push('/perfil') },
     { label: 'Configurar economia de bateria', onPress: abrirConfiguracoesBateria },
     ...(me?.is_admin
@@ -525,7 +511,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 2 },
   },
-  iconeBotao: { fontSize: 20 },
+  iconeBotao: { fontSize: 18 },
   marcadorPessoa: {
     width: 48,
     height: 48,

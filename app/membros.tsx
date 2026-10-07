@@ -8,6 +8,9 @@ import {
   FlatList,
   ActivityIndicator,
   ScrollView,
+  Modal,
+  TextInput,
+  Pressable,
 } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
 import * as Location from 'expo-location';
@@ -45,6 +48,9 @@ export default function Membros() {
   );
   const [membroSelecionado, setMembroSelecionado] = useState<Membro | null>(null);
   const [trocandoTipoDe, setTrocandoTipoDe] = useState<Membro | null>(null);
+  const [definindoCoordenadasDe, setDefinindoCoordenadasDe] = useState<Membro | null>(null);
+  const [latitudeDigitada, setLatitudeDigitada] = useState('');
+  const [longitudeDigitada, setLongitudeDigitada] = useState('');
 
   const carregar = useCallback(async () => {
     setCarregando(true);
@@ -136,6 +142,34 @@ export default function Membros() {
     }
   };
 
+  const abrirModalCoordenadas = (membro: Membro) => {
+    setLatitudeDigitada('');
+    setLongitudeDigitada('');
+    setDefinindoCoordenadasDe(membro);
+  };
+
+  const salvarCoordenadasDigitadas = async () => {
+    const lat = Number(latitudeDigitada.replace(',', '.'));
+    const lon = Number(longitudeDigitada.replace(',', '.'));
+
+    if (Number.isNaN(lat) || Number.isNaN(lon) || lat < -90 || lat > 90 || lon < -180 || lon > 180) {
+      Alert.alert('Coordenadas inválidas', 'Confira os valores de latitude e longitude.');
+      return;
+    }
+    if (!definindoCoordenadasDe) return;
+
+    try {
+      await apiFetch(`/user/${definindoCoordenadasDe.id}/location`, {
+        method: 'PUT',
+        body: JSON.stringify({ latitude: lat, longitude: lon }),
+      });
+      Alert.alert('Pronto', 'Posição definida com sucesso.');
+      setDefinindoCoordenadasDe(null);
+    } catch {
+      Alert.alert('Erro', 'Não foi possível salvar as coordenadas.');
+    }
+  };
+
   const confirmarReset = (membro: Membro) => {
     Alert.alert(
       'Resetar código?',
@@ -148,25 +182,34 @@ export default function Membros() {
   };
 
   const opcoesMembro: OpcaoMenu[] = membroSelecionado
-    ? membroSelecionado.tipo_usuario === 'local'
-      ? [
-          {
-            label: 'Definir posição aqui (usar minha localização atual)',
-            onPress: () => definirPosicaoAqui(membroSelecionado),
-          },
-          { label: 'Trocar tipo', onPress: () => setTrocandoTipoDe(membroSelecionado) },
-        ]
-      : [
-          { label: 'Resetar código de acesso', onPress: () => confirmarReset(membroSelecionado) },
-          membroSelecionado.is_admin
-            ? {
-                label: 'Rebaixar para peregrino',
-                destrutivo: true,
-                onPress: () => rebaixarAdmin(membroSelecionado),
-              }
-            : { label: 'Promover a admin', onPress: () => promoverAdmin(membroSelecionado) },
-          { label: 'Trocar tipo', onPress: () => setTrocandoTipoDe(membroSelecionado) },
-        ]
+    ? [
+        {
+          label: 'Ver dados',
+          onPress: () => router.push({ pathname: '/membro-detalhes', params: { id: String(membroSelecionado.id) } }),
+        },
+        ...(membroSelecionado.tipo_usuario === 'local'
+          ? [
+              {
+                label: 'Definir posição aqui (usar minha localização atual)',
+                onPress: () => definirPosicaoAqui(membroSelecionado),
+              },
+              {
+                label: 'Definir posição digitando coordenadas',
+                onPress: () => abrirModalCoordenadas(membroSelecionado),
+              },
+            ]
+          : [
+              { label: 'Resetar código de acesso', onPress: () => confirmarReset(membroSelecionado) },
+              membroSelecionado.is_admin
+                ? {
+                    label: 'Rebaixar para peregrino',
+                    destrutivo: true,
+                    onPress: () => rebaixarAdmin(membroSelecionado),
+                  }
+                : { label: 'Promover a admin', onPress: () => promoverAdmin(membroSelecionado) },
+            ]),
+        { label: 'Trocar tipo', onPress: () => setTrocandoTipoDe(membroSelecionado) },
+      ]
     : [];
 
   // Tela de resultado do reset — mostra o novo QR code
@@ -256,6 +299,50 @@ export default function Membros() {
           opcoes={opcoesTrocaTipo}
           aoFechar={() => setTrocandoTipoDe(null)}
         />
+
+        <Modal
+          visible={definindoCoordenadasDe !== null}
+          transparent
+          animationType="fade"
+          onRequestClose={() => setDefinindoCoordenadasDe(null)}
+        >
+          <Pressable style={styles.fundoModal} onPress={() => setDefinindoCoordenadasDe(null)}>
+            <Pressable style={styles.folhaModal} onPress={() => {}}>
+              <Text style={styles.tituloModal}>
+                Posição de {definindoCoordenadasDe ? nomeExibicao(definindoCoordenadasDe) : ''}
+              </Text>
+
+              <Text style={styles.rotuloCampoModal}>Latitude</Text>
+              <TextInput
+                style={styles.inputModal}
+                value={latitudeDigitada}
+                onChangeText={setLatitudeDigitada}
+                placeholder="Ex: -22.8508"
+                keyboardType="numbers-and-punctuation"
+              />
+
+              <Text style={styles.rotuloCampoModal}>Longitude</Text>
+              <TextInput
+                style={styles.inputModal}
+                value={longitudeDigitada}
+                onChangeText={setLongitudeDigitada}
+                placeholder="Ex: -45.2356"
+                keyboardType="numbers-and-punctuation"
+              />
+
+              <TouchableOpacity style={styles.botao} onPress={salvarCoordenadasDigitadas}>
+                <Text style={styles.textoBotao}>Salvar posição</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={styles.botaoCancelarModal}
+                onPress={() => setDefinindoCoordenadasDe(null)}
+              >
+                <Text style={styles.textoCancelarModal}>Cancelar</Text>
+              </TouchableOpacity>
+            </Pressable>
+          </Pressable>
+        </Modal>
       </SafeAreaView>
     </>
   );
@@ -313,4 +400,17 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   codigoTexto: { fontSize: 28, fontWeight: '800', letterSpacing: 6, marginBottom: 24 },
+  fundoModal: { flex: 1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'center', padding: 24 },
+  folhaModal: { backgroundColor: '#fff', borderRadius: 16, padding: 20 },
+  tituloModal: { fontSize: 17, fontWeight: '700', marginBottom: 16, textAlign: 'center' },
+  rotuloCampoModal: { fontSize: 13, color: '#444', marginBottom: 4, marginTop: 8 },
+  inputModal: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    padding: 12,
+    fontSize: 16,
+  },
+  botaoCancelarModal: { marginTop: 10, paddingVertical: 10, alignItems: 'center' },
+  textoCancelarModal: { color: '#888', fontSize: 15 },
 });
